@@ -1,0 +1,21 @@
+{% block content %}
+<h2>Sign up</h2>
+<form action="register" method="post">
+    {%csrf_token%}
+    <input type="text" name="first_name" placeholder="Nombre"><br>
+    <input type="text" name="last_name" placeholder="Apellido"><br>
+    <input type="text" name="username" placeholder="Nombre de usuario"><br>
+    <input type="email" name="email" placeholder="Correo electrónico"><br>
+    <input type="password" name="password1" placeholder="Contraseña"><br>
+    <input type="password" name="password2" placeholder="Confirmar contraseña"><br>
+    <input type="submit"><br>
+
+
+</form>
+
+<div>
+    {%for message in messages%}
+    <h3>{{message}}</h3>
+    {%endfor%}
+</div>
+{% endblock %}

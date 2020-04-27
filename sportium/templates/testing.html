@@ -1,0 +1,318 @@
+{% extends 'testing_base.html' %}
+
+{%load static%}
+
+
+
+{% block imports %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock imports %}
+
+{% block head_meta %}
+<meta charset="UTF-8">
+<meta name="description" content="Gym Template">
+<meta name="keywords" content="Gym, unica, creative, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% endblock head_meta %}
+
+
+{% block head_css %}
+<!-- Google Font -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+<!-- Css Styles -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/barfiller.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock head_css %}
+
+{% block navbar %}
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="canvas-search search-switch">
+        <i class="fa fa-search"></i>
+    </div>
+    <nav class="canvas-menu mobile-menu">
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about-us.html">Conocenos</a></li>
+            <li><a href="./classes.html">Clases</a></li>
+            <!--li><a href="./services.html">Servicios</a></li-->
+            <li><a href="./team.html">Entrenadores</a></li>
+            <li><a href="#">Equipo de entrenamiento</a>
+                <ul class="dropdown">
+                    <li><a href="./about-us.html">About us</a></li>
+                    <li><a href="./class-timetable.html">Classes timetable</a></li>
+                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
+                    <li><a href="./team.html">Our team</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./blog.html">Our blog</a></li>
+                    <li><a href="./404.html">404</a></li>
+                </ul>
+            </li>
+            <li><a href="./contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="canvas-social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-youtube-play"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+</div>
+
+
+<div id="nav_bar" style="background-color: black;">
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li><a href="/"><img src="{% static 'img/logo.png' %}" alt=""></a></li>
+                            <!--li class="active"><a href="./index.html">Home</a></li-->
+                            <li><a href="{% url 'dashboard' %}">EXPLORAR(dashboard calendario, trailers )</a></li>
+                            <!--li><a href="./services.html">Servicios</a></li-->
+                            <li><a href="#">PATROCINADORES</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about-us.html">About us</a></li>
+                                    <li><a href="./class-timetable.html">Classes timetable</a></li>
+                                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
+                                    <li><a href="./team.html">Our team</a></li>
+                                    <li><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href="./blog.html">Our blog</a></li>
+                                    <li><a href="./404.html">404</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contact' %}">Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="top-option">
+                        <div class="to-search search-switch">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="to-social">
+                            {% if user.is_authenticated %}
+                            <a href="#">Perfil</a>
+                            <a href="{% url 'logout' %}">Log Out</a>
+                            {%else%}
+                            <a href="{% url 'login' %}">INICIAR SESION</a>
+                            <a href="{% url 'register' %}">REGISTRO</a>
+                            {% endif %}
+                            <!--a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas-open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<!--Live section begins-->
+<div style="border:2px solid #000;">BLOCK CONTENT</div>
+<section class="hero-section">
+    <div class="hs-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-4">
+                        <div class="hi-text">
+                            <span>CLASES TOTALMENTE GRATIS</span>
+                            <h1>¿FORMA DE PAGO?<strong> TU COMPROMISO </strong></h1>
+                            <a href="#" class="primary-btn">+ INFO</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hs-item set-bg" data-setbg="{% static 'img/hero/hero-2.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-6">
+                        <div class="hi-text">
+                            <span>Shape your body</span>
+                            <h1>Be <strong>strong</strong> traning hard</h1>
+                            <a href="#" class="primary-btn">Get info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="live-section span">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="team-title">
+                    <div class="section-title">
+                        <span>Clases en vivo</span>
+                        <h2>Transmitiendo Ahorita</h2>
+                    </div>
+                    <a href="{% url 'register' %}" class="primary-btn btn-normal appoinment-btn">SUSCRIBETE</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <video width="320" height="240" controls>
+                <source src="{% static 'img/team/coaches/Untitled.ogg'%}" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            {% for live in lives %}
+            {% if live.is_live%}
+            <!--if views.py live3.is_live = False entonces no lo mostrara-->
+            <div class="col-lg-3">
+                <div class=" live-item">
+                    <div class="ci-text" style="text-align: left;">
+                        <span style="color:red;">live</span>
+                        <img src="{%static 'img/team/coaches/live.png'%}">
+                    </div>
+                    <div class="ci-pic">
+                        <img src="{{coachUrl}}/{{live.content_live}}" />
+                    </div>
+                    <div class="ci-text">
+                        <span>{{live.exercise_type}}</span>
+                        <h5>{{live.coach}}</h5>
+                        <a href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+
+
+{% block footer %}
+<section class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="fs-about">
+                    <div class="fa-logo">
+                        <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut
+                        labore dolore magna aliqua endisse ultrices gravida lorem.</p>
+                    <div class="fa-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa  fa-envelope-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="fs-widget">
+                    <h4>Useful links</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="fs-widget">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">Subscribe</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fs-widget">
+                    <h4>Tips & Guides</h4>
+                    <div class="fw-recent">
+                        <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
+                        <ul>
+                            <li>3 min read</li>
+                            <li>20 Comment</li>
+                        </ul>
+                    </div>
+                    <div class="fw-recent">
+                        <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a>
+                        </h6>
+                        <ul>
+                            <li>3 min read</li>
+                            <li>20 Comment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="copyright-text">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                        This
+                        template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock footer %}
+
+
+
+{% block footer_javascript %}
+<div style="border:2px solid #000;">BLOCK FOOTER_JAVASCRIPT</div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}">
+</script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.barfiller.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock footer_javascript %}
