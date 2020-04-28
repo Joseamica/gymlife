@@ -173,7 +173,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gymlife',
         'USER': 'postgres',
-        'PASSWORD': 'aloha1993',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
     }
 }
