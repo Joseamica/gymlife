@@ -1,0 +1,130 @@
+extends ../_skeleton
+
+include ../components/_services
+
+block variables
+	- pageName = 'Classes #2'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Classes
+	section.section.section-xl.bg-gray-100
+		.container: .row.row-xl.row-30.row-md-50.row-xl-70
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-5-370x246',
+					title: 'CrossFit'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-1-1', data-toggle='tab' ) Mo
+						li( role='presentation' ): a( href='#tabs-service-1-2', data-toggle='tab' ) We
+						li( role='presentation' ): a( href='#tabs-service-1-3', data-toggle='tab' ) FR
+
+					.service-classic-panel.tab-content
+						#tabs-service-1-1.tab-pane.fade.show.active
+							+service-tab-pane-1
+						#tabs-service-1-2.tab-pane.fade
+							+service-tab-pane-3
+						#tabs-service-1-3.tab-pane.fade
+							+service-tab-pane-5
+
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-6-370x246',
+					title: 'Cardio'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-2-1', data-toggle='tab' ) Tu
+						li( role='presentation' ): a( href='#tabs-service-2-2', data-toggle='tab' ) We
+						li( role='presentation' ): a( href='#tabs-service-2-3', data-toggle='tab' ) Th
+
+					.service-classic-panel.tab-content
+						#tabs-service-2-1.tab-pane.fade.show.active
+							+service-tab-pane-2
+						#tabs-service-2-2.tab-pane.fade
+							+service-tab-pane-4
+						#tabs-service-2-3.tab-pane.fade
+							+service-tab-pane-6
+
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-7-370x246',
+					title: 'Yoga & Meditation'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-3-1', data-toggle='tab' ) Mo
+						li( role='presentation' ): a( href='#tabs-service-3-2', data-toggle='tab' ) Th
+						li( role='presentation' ): a( href='#tabs-service-3-3', data-toggle='tab' ) Fr
+
+					.service-classic-panel.tab-content
+						#tabs-service-3-1.tab-pane.fade.show.active
+							+service-tab-pane-3
+						#tabs-service-3-2.tab-pane.fade
+							+service-tab-pane-5
+						#tabs-service-3-3.tab-pane.fade
+							+service-tab-pane-1
+
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-8-370x246',
+					title: 'Endurance Training'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-4-1', data-toggle='tab' ) Tu
+						li( role='presentation' ): a( href='#tabs-service-4-2', data-toggle='tab' ) Th
+						li( role='presentation' ): a( href='#tabs-service-4-3', data-toggle='tab' ) Sa
+
+					.service-classic-panel.tab-content
+						#tabs-service-4-1.tab-pane.fade.show.active
+							+service-tab-pane-4
+						#tabs-service-4-2.tab-pane.fade
+							+service-tab-pane-6
+						#tabs-service-4-3.tab-pane.fade
+							+service-tab-pane-2
+
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-9-370x246',
+					title: 'Pilates'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-5-1', data-toggle='tab' ) Mo
+						li( role='presentation' ): a( href='#tabs-service-5-2', data-toggle='tab' ) We
+						li( role='presentation' ): a( href='#tabs-service-5-3', data-toggle='tab' ) Sa
+
+					.service-classic-panel.tab-content
+						#tabs-service-5-1.tab-pane.fade.show.active
+							+service-tab-pane-5
+						#tabs-service-5-2.tab-pane.fade
+							+service-tab-pane-1
+						#tabs-service-5-3.tab-pane.fade
+							+service-tab-pane-3
+
+			.col-sm-6.col-lg-4
+				+service-classic({
+					img: 'service-10-370x246',
+					title: 'Stretching'
+				}).block-md
+
+					.service-classic-days: ul.list-inline.nav.nav-tabs
+						li( role='presentation' ): a.active( href='#tabs-service-6-1', data-toggle='tab' ) Mo
+						li( role='presentation' ): a( href='#tabs-service-6-2', data-toggle='tab' ) Tu
+						li( role='presentation' ): a( href='#tabs-service-6-3', data-toggle='tab' ) Fr
+
+					.service-classic-panel.tab-content
+						#tabs-service-6-1.tab-pane.fade.show.active
+							+service-tab-pane-6
+						#tabs-service-6-2.tab-pane.fade
+							+service-tab-pane-2
+						#tabs-service-6-3.tab-pane.fade
+							+service-tab-pane-4
+
+	include ../sections/_footer-classic

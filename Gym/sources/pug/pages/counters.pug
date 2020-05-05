@@ -1,0 +1,38 @@
+extends ../_skeleton
+
+include ../components/_counter
+
+block variables
+	- pageName = 'Counters'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Counters
+	section.section.section-lg.bg-default.text-center
+		.container
+			.row.row-30.justify-content-center
+				.col-sm-6.col-md-4
+					+counter({
+						value: 45,
+						postfix: 'k',
+						text: 'Adipiscing elit duis tristique sollicitudin nibh sit amet nulla.'
+					}).block-sm
+				.col-sm-6.col-md-4
+					+counter({
+						value: 78,
+						postfix: '%',
+						text: 'Commodo sed egestas egestas fringilla phasellus faucibus'
+					}).block-sm
+				.col-sm-6.col-md-4
+					+counter({
+						value: 90,
+						postfix: 'k',
+						text: 'Ac ut consequat semper viverra. Magna eget est lorem ipsum.'
+					}).block-sm
+
+	include ../sections/_section-counter-dark
+
+	include ../sections/_footer-classic

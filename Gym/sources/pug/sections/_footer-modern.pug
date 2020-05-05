@@ -1,0 +1,54 @@
+footer.section.footer-modern.bg-gray-17
+	.footer-modern-body.section-lg
+		.container.wow.fadeInUp: .row.row-30.row-md-50.justify-content-md-between
+			.col-md-6.col-lg-4
+				.footer-modern-brand: +logo
+				p Our CrossFit Studio offers the best training programs designed by certified coaches to help you achieve the top results.
+				.footer-modern-list-social
+					ul.list-social.list-social-3.list-inline.list-inline-xl
+						li: a.icon.mdi.mdi-instagram( href='#' )
+						li: a.icon.mdi.mdi-facebook( href='#' )
+						li: a.icon.mdi.mdi-youtube-play( href='#' )
+						li: a.icon.mdi.mdi-twitter( href='#' )
+				+rights
+			.col-md-5.col-lg-4.col-xl-3
+				.heading-5.footer-modern-title Opening hours
+				ul.footer-modern-schedule
+					li
+						span Mon-Thu
+						span 7 am - 9 pm
+					li
+						span Friday
+						span 7 am - 7 pm
+					li
+						span Saturday
+						span 7 am - 5 pm
+					li
+						span Sunday
+						span Closed
+
+			.col-lg-3
+				.heading-5.footer-modern-title Motivation
+				.owl-carousel.owl-style-6.owl-dots-1( data-items='1', data-dots='true', data-autoplay='true', data-margin='30' )
+					+quote-navy({
+						text: 'The most difficult thing is the decision to act, the rest is merely tenacity.',
+						title: 'Amelia Smith'
+					})
+					+quote-navy({
+						text: 'During the hard times, it’s important to focus on the things you can change in that moment.',
+						title: 'Peter Williams'
+					})
+					+quote-navy({
+						text: 'Life is not about how hard you hit, it’s about how hard you can get hit and keep moving.',
+						title: 'Sam McMillan'
+					})
+
+	.footer-modern-panel.bg-gray-13
+		.container.wow.fadeInUp
+			ul.footer-modern-nav.list-inline
+				li: a( href='#' ) Programs
+				li: a( href='gallery.html' ) Gallery
+				li: a( href='coaches.html' ) Coaches
+				li: a( href= links.schedule ) Schedule
+				li: a( href= links.news ) Blog
+				li: a( href='contact-us.html' ) Contacts

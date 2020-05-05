@@ -1,0 +1,60 @@
+extends ../_skeleton
+
+include ../components/_video
+include ../components/_quote
+include ../components/_counter
+include ../components/_team
+include ../components/_boxes
+
+block variables
+	- pageName = 'About Us'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Our Mission
+	section.section.section-xl.bg-default
+		.container: .row.row-30.row-lg-50
+			.col-md-6
+				+video({
+					img: 'video-1-549x384',
+					link: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+				})
+			.col-md-6: .inset-xl-left-70
+				h2 Our Mission
+				+quote-minimal({
+					text: 'We aim to provide the community with quality fitness and sport events.'
+				})
+				p.big Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing commodo elit at imperdiet dui. Mauris ultrices eros in cursus turpis massa tincidunt dui. Eget dolor morbi non arcu risus quis varius quam quisque.
+
+	include ../sections/_section-counter-dark
+
+	//Coaches 1
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 Our team
+			include ../includes/_our-team-default
+
+	include ../sections/_section-icon-lists-dark
+
+	// Our partners
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 Our partners
+			p.big Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Enim lobortis scelerisque fermentum
+				=' '
+				br.d-none.d-xl-block
+				| dui faucibus. A lacus vestibulum sed arcu non. Eu tincidunt tortor aliquam nulla facilisi.
+			.row.row-xl.row-30
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-1-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-2-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-3-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-4-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-5-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-6-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-7-270x145.png')
+				.col-sm-4.col-lg-3: a.client-classic( href='#' ): +img('client-8-270x145.png')
+
+	include ../sections/_footer-classic

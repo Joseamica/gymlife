@@ -1,0 +1,113 @@
+extends ../_skeleton
+
+include ../components/_boxes
+
+block variables
+	- pageName = 'Icon Lists'
+
+block page 
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 #1
+			.row.row-xl.no-gutters.bordered-2.ordered-1
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-bottle',
+						title: 'Water Stations'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-bus2',
+						title: 'Free Transportation'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-clipboard-user',
+						title: 'Quick Registration'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-man-woman',
+						title: 'Comfortable Toilets'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-first-aid',
+						title: 'Medical Support'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-trophy2',
+						title: 'Medals for Winners'
+					})
+
+	.section-xs.bg-default.text-center: h2 #2
+	include ../sections/_section-icon-lists-dark
+
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 #3
+			.row.row-xl.no-gutters.bordered-3
+				.col-sm-6
+					+box-creative({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-bench-press',
+						title: 'Modern Equipment',
+						text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+					}).box-creative-1.box-creative-green.text-center.text-sm-left
+				.col-sm-6
+					+box-creative({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-apple',
+						title: 'Healthy Eating',
+						text: 'Sunt historiaes imperium lotus, nobilis fortises. Adgiums sunt finiss.'
+					}).box-creative-1.box-creative-yellow.text-center.text-sm-left
+				.col-sm-6
+					+box-creative({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-smile',
+						title: 'Friendly Coaches',
+						text: 'Vae, vortex! Cum genetrix observare, omnes capioes imitari emeritis.'
+					}).box-creative-1.box-creative-rose.text-center.text-sm-left
+				.col-sm-6
+					+box-creative({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-map2',
+						title: 'Perfect Location',
+						text: 'Bi-color planetas ducunt ad devatio. Brabeutas sunt accolas de.'
+					}).box-creative-1.box-creative-turquoise.text-center.text-sm-left
+
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 #4
+			.row.row-xl.no-gutters.bordered-1
+				.col-sm-6.col-lg-3
+					+box-modern({
+						icon: 'mdi mdi-food-variant',
+						title: 'Healthy Eating',
+						text: 'Consequuntur, libero sed cum. Delectus suscipit tempore fugit'
+					}).box-modern-2
+				.col-sm-6.col-lg-3
+					+box-modern({
+						icon: 'mdi mdi-flag',
+						title: 'Achieving Your Goals',
+						text: 'Audax, fortis vigils absolute tractare desecundus, pius.'
+					}).box-modern-2
+				.col-sm-6.col-lg-3
+					+box-modern({
+						icon: 'mdi mdi-flash',
+						title: 'Strong Body',
+						text: 'Cum secula trabem, omnes caculaes magicae primus.'
+					}).box-modern-2
+				.col-sm-6.col-lg-3
+					+box-modern({
+						icon: 'mdi mdi-map',
+						title: 'Perfect Location',
+						text: 'Brevis, lotus habitios superbe perdere de placidus.'
+					}).box-modern-2
+
+	include ../sections/_footer-classic

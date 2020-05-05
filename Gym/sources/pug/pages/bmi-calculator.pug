@@ -1,0 +1,95 @@
+extends ../_skeleton
+
+block variables
+	- pageName = 'BMI Calculator'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//BMI Calculator
+	section.section.section-xl.bg-default
+		.container
+			h2.text-center #1
+			.row.row-xl.row-30.row-lg-50
+				.col-md-6: .inset-xl-right-70
+					.table-info-wrap: .table-custom-responsive
+						include ../includes/_table-info
+
+				.col-md-6.box-calculator
+					h3 BMI Calculator
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					form.rd-form: .row.row-20.gutter-20
+						.col-sm-6
+							.form-wrap
+								input#calculator-height.form-input( type='text', name='name' )
+								label.form-label( for='calculator-height' ) Height (ft)
+						.col-sm-6
+							.form-wrap
+								input#calculator-weight.form-input( type='text', name='name' )
+								label.form-label( for='calculator-weight' ) Weight (lbs)
+						.col-sm-6
+							.form-wrap
+								input#calculator-age.form-input( type='text', name='name' )
+								label.form-label( for='calculator-age' ) Age
+						.col-sm-6
+							.select-wrap
+								select
+									option Male
+									option Female
+
+					.group-lg.group-custom-2.align-items-center
+						div: button.button.button-default-outline( type='submit' ) Calculate
+						div
+							ul.box-calculator-list-results
+								li Your BMI is:
+									span.box-calculator-result 19
+								li Weight status is:
+									span.box-calculator-result Healthy
+
+	//BMI Calculator
+	.section-xl.bg-default
+		.container: h2.text-center #2
+		+parallax({
+			img: 'parallax-1',
+			innerClass: 'section-xl'
+		}).bg-gray-700
+			.container: .row.row-xl.row-30.row-lg-50.justify-content-xl-between
+				.col-md-6.col-xl-5
+					h5 BMI calculator chart
+					.table-custom-responsive.table-info-wrap-1.inset-xl-right-40
+						include ../includes/_table-info
+
+				.col-md-6.box-calculator
+					h5 Calculate your BMI
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					form.rd-form.form-style-4: .row.row-20.gutter-20
+						.col-sm-6
+							.form-wrap
+								input#calculator-2-height.form-input( type='text', name='name' )
+								label.form-label( for='calculator-2-height' ) Height (ft)
+						.col-sm-6
+							.form-wrap
+								input#calculator-2-weight.form-input( type='text', name='name' )
+								label.form-label( for='calculator-2-weight' ) Weight (lbs)
+						.col-sm-6
+							.form-wrap
+								input#calculator-2-age.form-input( type='text', name='name' )
+								label.form-label( for='calculator-2-age' ) Age
+						.col-sm-6
+							.select-wrap
+								select
+									option Male
+									option Female
+
+					.group-lg.group-custom-2.align-items-center
+						div: button.button.button-gradient( type='submit' ) Calculate
+						div
+							ul.box-calculator-list-results
+								li Your BMI is:
+									span.box-calculator-result 19
+								li Weight status is:
+									span.box-calculator-result Healthy
+
+	include ../sections/_footer-classic

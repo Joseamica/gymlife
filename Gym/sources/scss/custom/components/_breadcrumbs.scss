@@ -1,0 +1,111 @@
+/** @section Breadcrumbs */
+
+// Local variables
+$breadcrumb-padding-vertical: 8px;
+$breadcrumb-padding-horizontal: 15px;
+$breadcrumb-bg: $gray-700;
+$breadcrumb-color: $white;
+$breadcrumb-active-color: rgba($white, .8);
+$breadcrumb-separator: '\\';
+
+// Base styles
+.breadcrumbs-custom {
+	position: relative;
+	text-align: center;
+	background-color: $breadcrumb-bg;
+	background-position-x: 70%;
+}
+
+.breadcrumbs-main {
+	padding: 50px 0;
+}
+
+.breadcrumbs-panel {
+	padding: 15px 0;
+	background: rgba($white, .14);
+}
+
+.breadcrumbs-custom-title {
+	text-shadow: 0 9px 16px rgba($black, 0.18);
+}
+
+.breadcrumbs-custom-path {
+	font-size: 0;
+	line-height: 0;
+	@include spacingX(30px);
+
+	a {
+		display: inline;
+
+		&,
+		&:active,
+		&:focus {
+			color: $breadcrumb-color;
+		}
+	}
+
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		line-height: 1.2;
+		font-weight: 500;
+		letter-spacing: .13em;
+		text-transform: uppercase;
+
+		&::after {
+			position: absolute;
+			right: -3px;
+			content: $breadcrumb-separator;
+		}
+	}
+
+	li:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
+	a:hover {
+		color: $primary;
+	}
+
+	li.active {
+		color: $breadcrumb-active-color;
+	}
+}
+
+@include media-breakpoint-up(md) {
+
+	.breadcrumbs-main {
+		padding: 80px 0;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+
+	.breadcrumbs-custom {
+		background-position-x: 50%;
+	}
+
+	.breadcrumbs-main {
+		padding: 100px 0;
+	}
+
+	.breadcrumbs-panel {
+		padding: 25px 0;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.breadcrumbs-main {
+		padding: 120px 0;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.breadcrumbs-main {
+		padding: 140px 0;
+	}
+}

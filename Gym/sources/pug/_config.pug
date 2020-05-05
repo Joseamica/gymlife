@@ -1,0 +1,134 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Barlow+Condensed:100,300,400,400i,500,500i,600,700,900%7CRoboto:100,300,400,500,700,900",
+		logo = {
+			default: 'logo-default-234x84.png',
+			inverse: 'logo-inverse-234x84.png',
+			name: 'RACE'
+		},
+		links = {
+			news: 'news.html',
+			blogPost: 'blog-post.html',
+			schedule: 'schedule.html',
+			singleClass: 'single-class.html',
+			singleProduct: 'single-product.html',
+			teamMember: 'single-coach-page.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#b6c062'
+		},
+		menu = [
+			{
+				title: 'Home',
+				link: './',
+				dropdown: [
+					{ title: 'Sport Event', link: './' },
+					{ title: 'Crossfit' },
+					{ title: 'Fitness' },
+					{ title: 'Personal trainer' },
+					{ title: 'Yoga' },
+					{ title: 'Gym' }
+				]
+			},
+			{
+				title: 'About',
+				link: '#',
+				dropdown: [
+					{ title: 'About Us' },
+					{ title: 'Coaches' },
+					{ title: 'Single coach page' }
+				]
+			},
+			{
+				title: 'Schedule',
+				link: '#',
+				dropdown: [
+					{ title: 'Schedule' },
+					{ title: 'Schedule 2' },
+					{ title: 'Schedule by class' },
+					{ title: 'Schedule by days' }
+				]
+			},
+			{
+				title: 'News',
+				dropdown: [
+					{ title: 'Blog post' }
+				]
+			},
+			{
+				title: 'Pages',
+				link: '#',
+				megamenu: [
+					{
+						title: 'Classes',
+						list: [
+							{ title: 'Classes' },
+							{
+								title: 'Classes #2',
+								link: 'classes-2.html'
+							},
+							{
+								title: 'Classes #3',
+								link: 'classes-3.html'
+							},
+							{
+								title: 'Classes #4',
+								link: 'classes-4.html'
+							},
+							{ title: 'Single Class' }
+						]
+					},
+					{
+						title: 'Shop',
+						list: [
+							{ title: 'Shop' },
+							{ title: 'Single product' },
+							{ title: 'Pricing tables' },
+							{ title: 'Cart page' },
+							{ title: 'Checkout' }
+						]
+					},
+					{
+						title: 'Pages 1',
+						link: '#',
+						list: [
+							{ title: 'FAQ' },
+							{ title: 'Events' },
+							{ title: 'Gallery' },
+							{ title: 'BMI calculator' },
+							{ title: 'Contact Us' }
+						]
+					},
+					{
+						title: 'Pages 2',
+						link: '#',
+						list: [
+							{ title: '404' },
+							{ title: 'Coming soon' },
+							{ title: 'Search results' },
+							{ title: 'Privacy policy' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Elements',
+				link: '#',
+				dropdown: [
+					{ title: 'Typography' },
+					{ title: 'Buttons' },
+					{ title: 'Forms' },
+					{ title: 'Tabs' },
+					{ title: 'Progress bars' },
+					{ title: 'Counters' },
+					{ title: 'Icon lists' }
+				]
+			}
+		],
+
+		// Predefined variables
+		self = {},
+		breadcrumbs = [],
+		pageName = 'Home'

@@ -15,7 +15,7 @@ import os
 # añadido por mi
 import stripe
 # añadido por mi
-from decouple import config
+#from decouple import config
 from django.conf import settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

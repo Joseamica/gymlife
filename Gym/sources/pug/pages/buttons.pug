@@ -1,0 +1,32 @@
+extends ../_skeleton
+
+block variables
+	- pageName = 'Buttons'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Button Sizes
+	section.section.section-lg.bg-default
+		.container
+			h2 Button Sizes
+			.group-md.group-middle
+				.button.button-lg.button-gradient Large size
+				.button.button-gradient Default size
+				.button.button-sm.button-gradient Small size
+
+	//Buttons with Icons
+	section.section.section-lg.bg-default
+		.container
+			h2 Buttons with Icons
+			.group-md.group-middle
+				.button.button-lg.button-icon.button-icon-left.button-primary-outline
+					span.icon.mdi.mdi-email-outline
+					| Icon left
+				.button.button-lg.button-icon.button-icon-right.button-primary-outline
+					span.icon.mdi.mdi-chevron-down
+					| Icon right
+
+	include ../sections/_footer-classic

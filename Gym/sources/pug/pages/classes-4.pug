@@ -1,0 +1,55 @@
+extends ../_skeleton
+
+include ../components/_services
+
+block variables
+	- pageName = 'Classes #4'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Classes
+	section.section.section-xl.bg-gray-100
+		.container
+			// Owl Carousel
+			.owl-carousel( data-items='1', data-sm-items='2', data-lg-items='3', data-margin='30', data-autoplay='true', data-dots='true' )
+				+service-minimal({
+					img: 'service-15-370x346',
+					title: 'Running & Cardio',
+					time: '30',
+					number: '1'
+				}).block-md
+				+service-minimal({
+					img: 'service-16-370x346',
+					title: 'Strength Classes',
+					time: '50',
+					number: '2'
+				}).block-md
+				+service-minimal({
+					img: 'service-17-370x346',
+					title: 'Stretching',
+					time: '15',
+					number: '3'
+				}).block-md
+				+service-minimal({
+					img: 'service-18-370x346',
+					title: 'Yoga',
+					time: '60',
+					number: '4'
+				}).block-md
+				+service-minimal({
+					img: 'service-30-370x346',
+					title: 'CrossFit',
+					time: '80',
+					number: '5'
+				}).block-md
+				+service-minimal({
+					img: 'service-31-370x346',
+					title: 'Pilates',
+					time: '45',
+					number: '6'
+				}).block-md
+
+	include ../sections/_footer-classic

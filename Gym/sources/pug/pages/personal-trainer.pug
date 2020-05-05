@@ -1,0 +1,290 @@
+extends ../_skeleton
+
+include ../components/_counter
+include ../components/_video
+include ../components/_services
+include ../components/_boxes
+include ../components/_quote
+include ../components/_posts
+
+block variables
+	-
+		var
+			pageName = 'Personal Trainer',
+			style = '3';
+
+		logo = {
+			default: 'logo-default-3-126x126.png',
+			inverse: 'logo-inverse-3-126x126.png',
+			name: 'Jane Smith'
+		};
+
+block page
+	include ../sections/_header-minimal
+	include ../sections/_swiper-slider-5
+
+	//About
+	section.section.section-xxl.section-inset-8.bg-default.position-relative
+		.container: .row.row-30.row-md-50.align-items-center.justify-content-lg-between
+			.col-md-7.col-lg-6
+				.title-15-wrap.wow.fadeInLeft
+					.heading-7.title-15.text-line-left.text-line-big About Me
+					p.big.text-gray-800 I'm a certified trainer, run coach, nutrition adviser and elite athlete. I help clients improve their metabolism, lose weight, increase performance, and gain more energy through proper excercises.
+				.counter-minimal-wrap.justify-content-lg-between.inset-xl-right-60
+					+counter-minimal({
+						value: 567,
+						postfix: '+',
+						title: 'Clients'
+					})
+					+counter-minimal({
+						value: 50,
+						postfix: 'hrs',
+						title: 'Free videos'
+					})
+					+counter-minimal({
+						value: 12,
+						postfix: 'yrs',
+						title: 'Experience'
+					})
+
+			.col-sm-8.col-md-5.wow.fadeInUp
+				+video-creative({
+					img: 'video-5-421x465',
+					link: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+				})
+
+	//Classes
+	section.section.section-xxl.section-inset-9.bg-gray-13
+		.container.container-style-3: .row.row-30.row-md-50.align-items-center.flex-sm-row-reverse.justify-content-xl-between.offset-negative-top-1
+			.col-sm-6.col-lg-5.wow.fadeInRight: .inset-xl-left-40
+				.block-md.block-left.box-style-3
+					.heading-7.title-15.text-line-right Classes
+					p.big I provide a wide variety of fitness classes and workouts. Here are some of them.
+					.group-xl.group-middle
+						#owl-nav-7.owl-nav-2
+						a.link-default.link-default-1( href= links.schedule ) See schedule
+			.col-sm-6.col-lg-7.wow.fadeInLeft
+				// Owl Carousel
+				.owl-carousel.owl-style-11( data-items='1', data-lg-items='2', data-xxl-items='3', data-margin='30', data-autoplay='true', data-navigation-class='#owl-nav-7' )
+					+service-minimal({
+						img: 'service-15-370x346',
+						title: 'Running & Cardio',
+						time: '30',
+						number: '1'
+					}).service-minimal-1.service-minimal-2.block-md
+					+service-minimal({
+						img: 'service-16-370x346',
+						title: 'Strength Classes',
+						time: '50',
+						number: '2'
+					}).service-minimal-1.service-minimal-2.block-md
+					+service-minimal({
+						img: 'service-17-370x346',
+						title: 'Stretching',
+						time: '15',
+						number: '3'
+					}).service-minimal-1.service-minimal-2.block-md
+					+service-minimal({
+						img: 'service-18-370x346',
+						title: 'Yoga',
+						time: '60',
+						number: '4'
+					}).service-minimal-1.service-minimal-2.block-md
+
+	//My Approach
+	section.section.section-xxl.bg-default
+		.container: .row.row-30.row-md-50.justify-content-xl-between
+			.col-lg-6.col-xl-5.wow.fadeInUp
+				.heading-7.title-15 My Approach
+				.heading-3.title-16.text-line-left to Work
+				.heading-5.title-6: span.text-gray-800 I try to provide the most effective and result-oriented workouts based on:
+				ul.list-marked.list-marked-1.big
+					li Dedication to clients and their fitness goals;
+					li Proper planned and balanced nutrition program;
+					li Personalized workout course and more.
+			.col-lg-6: .row.row-xl.no-gutters.justify-content-end.bordered-5.offset-negative-xl-left-15
+				.col-sm-6
+					+box-modern({
+						icon: 'mdi mdi-food-variant',
+						title: 'Healthy Eating',
+						text: 'Providing advisory and help on good and healthy nutrition.'
+					}).box-modern-2.wow.fadeIn
+				.col-sm-6
+					+box-modern({
+						icon: 'mdi mdi-flag',
+						title: 'Achieving Your Goals',
+						text: 'Developing a personalized training strategy for my clients.'
+					}).box-modern-2.wow.fadeIn( data-wow-delay='.05s' )
+				.col-sm-6.no-border.counter-nikki-wrap
+					+counter-nikki({
+						value: 568,
+						title: 'Happy clients'
+					})
+				.col-sm-6
+					+box-modern({
+						icon: 'mdi mdi-flash',
+						title: 'Strong Body',
+						text: 'Helping you achieve strength and health of your body.'
+					}).box-modern-2.wow.fadeIn
+
+	include ../sections/_section-schedule-3
+
+	//BMI Calculator
+	section.section.section-xl.bg-default
+		.container
+			.row.row-xl.row-30.row-lg-50
+				.col-md-6.wow.fadeInLeft: .inset-xl-right-70
+					.table-info-wrap: .table-custom-responsive
+						include ../includes/_table-info
+
+				.col-md-6.box-calculator.wow.fadeInRight
+					h3 BMI Calculator
+					p This BMI calculator generates the number of calories your body burns per day at rest.
+					form.rd-form: .row.row-20.gutter-20
+						.col-sm-6
+							.form-wrap
+								input#calculator-height.form-input( type='text', name='name' )
+								label.form-label( for='calculator-height' ) Height (ft)
+						.col-sm-6
+							.form-wrap
+								input#calculator-weight.form-input( type='text', name='name' )
+								label.form-label( for='calculator-weight' ) Weight (lbs)
+						.col-sm-6
+							.form-wrap
+								input#calculator-age.form-input( type='text', name='name' )
+								label.form-label( for='calculator-age' ) Age
+						.col-sm-6
+							.select-wrap
+								select
+									option Male
+									option Female
+
+					.group-lg.group-custom-2.align-items-center
+						div: button.button.button-default-outline( type='submit' ) Calculate
+						div
+							ul.box-calculator-list-results
+								li Your BMI is:
+									span.box-calculator-result 19
+								li Weight status is:
+									span.box-calculator-result Healthy
+
+	// Are You Ready
+	section.section.section-xs.position-relative
+		.container: .row.row-30.flex-md-row-reverse.justify-content-lg-between
+			.col-md-6.position-static
+				.image-position.image-position-right.wow.slideInRight.slideInCustom: +img('image-9-1002x552')
+			.col-md-6.col-lg-5.wow.fadeInLeft
+				.heading-7.title-15 Are You Ready
+				.heading-3.title-16.text-line-left to Change?
+				.heading-5.title-6: span.text-gray-800 Bring better change into your life with my workouts and training programs. Contact me today to improve your life tomorrow!
+				.group-md.group-middle
+					a.button.button-lg.button-1.button-primary( href='contact-us.html' ) Contact me
+					.big.d-none.d-xl-block or
+					.contacts-fiona
+						.contacts-fiona-text Call me for any question
+						.heading-5.contacts-fiona-link: a( href='tel:#' ) +61 3 8376 6284
+		+img('image-10-279x403.png').image-2.wow.fadeIn
+
+
+	//Testimonials
+	section.section.section-xl.bg-default.text-center
+		.owl-style-12.section-sm.wow.fadeInUp
+			.container
+				// Owl Carousel
+				.owl-carousel.owl-nav-1( data-items='1', data-lg-items='2', data-nav='true', data-dots='true', data-autoplay='true', data-margin='30', data-xl-margin='100', data-xxl-margin='170', data-smart-speed='400' )
+					+quote-karen({
+						img: 'user-17-80x80',
+						author: 'James Johnson',
+						position: 'Designer',
+						text: '”I was quite surprised with a range of services Jane offered me. Her group training programs are perfect for beginners. She knows a lot about me and my frustrations, limitations, moods, aches and pains.”'
+					})
+					+quote-karen({
+						img: 'user-15-80x80',
+						author: 'Grace Dean',
+						position: 'Manager',
+						text: '”Jane’s 90-day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout. She works with the whole person - mentally, emotionally and physically.”'
+					})
+					+quote-karen({
+						img: 'user-18-80x80',
+						author: 'Kate Williams',
+						position: 'Nurse',
+						text: '”Jane’s understanding of my personal needs as related to CrossFit, as well as her overall knowledge, insight, and abilities are unparalleled. She has a unique ability to create workouts specific to each client.”'
+					})
+
+		a.link-default.wow.fadeInUp( href= '#' ) More testimonials
+
+	section.section.section-xxl.bg-gray-100.text-center
+		.container
+			.group-sm.group-custom-5.wow.fadeInUp
+				h3 News & Events
+				div: a.link-default( href= 'news.html' ) See all news
+			.row.row-30.row-md-50.row-lg
+				.col-md-6.wow.fadeInLeft
+					+post-bonnie({
+						img: 'post-24-570x360',
+						title: 'Running for Beginners: <br>Mistakes to Avoid',
+						time: { date: '2019-05-25', text: 'May 25, 2019' },
+						text: 'Heading out for a run sounds so simple—there’s no equipment, no gym membership required, and...'
+					}).block-xl
+				.col-md-6.wow.fadeInRight
+					+post-bonnie({
+						img: 'post-25-570x360',
+						title: 'Why Balanced Nutrition is <br>Beneficial for Your Health',
+						time: { date: '2019-05-29', text: 'May 29, 2019' },
+						text: 'Good nutrition is an important part of leading a healthy lifestyle. Combined with physical activity, your...'
+					}).block-xl
+
+	//Have Any Questions?
+	+parallax({
+		img: 'parallax-7',
+		innerClass: 'section-xxl'
+	}).bg-gray-13
+		.container: .row.row-30.row-md-50
+			.col-lg-4.col-xl-5.wow.fadeInLeft: .inset-xl-right-70
+				.heading-7.title-15 Have Any Questions?
+				.heading-5.title-6 Feel free to contact me using the form on the right.
+				ul.list-contacts
+					li
+						span.icon.mdi.mdi-phone
+						a.big( href='tel:#' ) +1 800 123 1234
+					li
+						span.icon.mdi.mdi-map-marker
+						a.big( href='#' ) 652 Main Road, Apt 12 New York, USA
+					li
+						span.icon.mdi.mdi-email-outline
+						a.big( href='mailto:#' ) info@demolink.org
+
+			.col-lg-8.col-xl-7.wow.fadeInRight
+				//RD Mailform
+				form.rd-form.rd-mailform.form-style-4( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+					.row.row-20.gutter-20
+						.col-sm-6
+							.form-wrap
+								input#contact-name.form-input( type='text', name='name', data-constraints='@Required' )
+								label.form-label( for='contact-name' ) Your Name
+
+						.col-sm-6
+							.form-wrap
+								input#contact-surname.form-input( type='text', name='name', data-constraints='@Required' )
+								label.form-label( for='contact-surname' ) Your Surname
+
+						.col-sm-6
+							.form-wrap
+								input#contact-phone.form-input( type='text', name='phone', data-constraints='@Numeric' )
+								label.form-label( for='contact-phone' ) Phone
+
+						.col-sm-6
+							.form-wrap
+								input#contact-email.form-input( type='email', name='email', data-constraints='@Email @Required' )
+								label.form-label( for='contact-email' ) E-mail
+
+						.col-12
+							.form-wrap
+								label.form-label( for='contact-message') Message
+								textarea#contact-message.form-input( name='message', data-constraints='@Required' )
+
+					.group-lg.group-custom-1
+						p I am always happy to answer your questions regarding fitness, workouts, and nutrition.
+						div: button.button.button-primary( type='submit' ) Send Message
+
+	include ../sections/_footer-minimal

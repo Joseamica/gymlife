@@ -1,0 +1,361 @@
+extends ../_skeleton
+
+include ../components/_services
+include ../components/_boxes
+include ../components/_thumbnails
+include ../components/_quote
+include ../components/_team
+include ../components/_pricing
+include ../components/_posts
+
+block variables
+	-
+		var
+			pageName = 'Fitness',
+			style = '2';
+
+		logo = {
+			default: 'logo-default-2-334x84.png',
+			inverse: 'logo-inverse-2-334x84.png',
+			name: 'GoSport'
+		};
+
+block page
+	include ../sections/_header-creative
+	include ../sections/_swiper-slider-3
+
+	//About us
+	section.section.section-xl.bg-default
+		.container: .row.row-30.row-md-50.align-items-center
+			.col-lg-4.col-xl-5.wow.fadeInUp: .inset-xl-right-70
+				.title-10 A few words about us
+				.divider
+				h3.text-transform-none #1 Fitness Club
+				p.big GoSport is the fitness club that makes fitness totally accessible to everybody. We promise to help people from all walks of life achieve their individual health and fitness goals.
+			.col-sm-11.col-md-9.col-lg-8.col-xl-7: .group-custom-3
+				+img('image-7-523x367.png').wow.fadeIn
+				form.rd-form.form-style-5.bg-gray-100.rd-mailform.wow.fadeInRight( data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+					.form-wrap
+						input#contact-name.form-input( type='text', name='name', data-constraints='@Required' )
+						label.form-label( for='contact-name' )
+							span.icon.mdi.mdi-account-outline
+							span Your Name
+					.form-wrap
+						input#contact-phone.form-input( type='text', name='phone', data-constraints='@Numeric' )
+						label.form-label( for='contact-phone' )
+							span.icon.mdi.mdi-phone
+							span Phone
+					.group-lg.group-custom-4.align-items-center
+						button.button.button-gray-800( type='submit' ) Book a workout
+						.text-1 First lesson is free
+
+	//Our classes
+	section.section.section-xl.bg-gray-13.text-center
+		.container
+			.title-10.wow.fadeInDown Our classes
+			.divider
+			h4.title-11.wow.fadeInUp We provide a variety of workouts and training classes to our new
+				br.d-none.d-lg-block
+				|  and regular customers. Feel free to learn more below.
+			// Owl Carousel
+			.owl-carousel.owl-style-5.owl-dots-1( data-items='1', data-lg-items='2', data-dots='true', data-autoplay='true', data-margin='30', data-smart-speed='500' )
+				+service({
+					img: 'service-1-570x319',
+					title: 'Cardio Training',
+					text: 'Greatly improve your health with our cardio workouts.',
+					user: {
+						img: 'user-1-57x57',
+						name: 'Patrick Stuart'
+					},
+					time: '60'
+				}).service-1.block-xl
+				+service({
+					img: 'service-2-570x319',
+					title: 'Endurance Training',
+					text: 'Increase your stamina with Endurance workouts.',
+					user: {
+						img: 'user-2-57x57',
+						name: 'Ann Williams'
+					},
+					time: '60'
+				}).service-1.block-xl
+				+service({
+					img: 'service-3-570x319',
+					title: 'Crossfit',
+					text: 'Spice up your workout routine with CrossFit training.',
+					user: {
+						img: 'user-3-57x57',
+						name: 'Kate McMillan'
+					},
+					time: '45'
+				}).service-1.block-xl
+				+service({
+					img: 'service-4-570x319',
+					title: 'Pilates',
+					text: 'Get a great full-body workout without fancy equipment.',
+					user: {
+						img: 'user-4-57x57',
+						name: 'Sophia Smith'
+					},
+					time: '45'
+				}).service-1.block-xl
+
+	//Why Choose Us
+	section.section.section-xl.bg-default.text-center
+		.container
+			.title-10.wow.fadeInDown Why Choose Us
+			.divider
+			h4.title-11.wow.fadeInUp There are dozens of reasons why our clients choose GoSport as the
+				=' '
+				br.d-none.d-lg-block
+				| fitness club of their preference.
+			.row.row-xl.no-gutters.bordered-1
+				.col-sm-6.col-lg-4.wow.fadeIn( data-wow-delay='.05s' )
+					+box-molly({
+						icon: 'linearicons-map2',
+						title: 'Best Location',
+						text: 'Our fitness club is located in the downtown area and can be easily reached from anywhere.'
+					})
+				.col-sm-6.col-lg-4.wow.fadeIn
+					+box-molly({
+						icon: 'linearicons-dumbbell',
+						title: 'Premium Equipment',
+						text: 'We use only the best equipment and gear for our workouts and fitness classes.'
+					})
+				.col-sm-6.col-lg-4.wow.fadeIn( data-wow-delay='.05s' )
+					+box-molly({
+						icon: 'linearicons-smile',
+						title: 'Friendly Coaches',
+						text: 'Our team of highly qualified and friendly coaches is always ready to help you.'
+					})
+
+			a.button.button-default-outline.offset-top-2.wow.fadeInUp( href='#' ) Read more
+
+	section.section.section-xl.bg-default
+		.row.row-8.gutter-8( data-lightgallery='group' )
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp
+				+thumbnail-classic({
+					img: 'gallery-9-475x354',
+					imgOriginal: 'gallery-9-1200x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.05s' )
+				+thumbnail-classic({
+					img: 'gallery-10-475x354',
+					imgOriginal: 'gallery-10-533x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.1s' )
+				+thumbnail-classic({
+					img: 'gallery-11-475x354',
+					imgOriginal: 'gallery-11-1200x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.15s' )
+				+thumbnail-classic({
+					img: 'gallery-12-475x354',
+					imgOriginal: 'gallery-12-1200x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.15s' )
+				+thumbnail-classic({
+					img: 'gallery-5-475x354',
+					imgOriginal: 'gallery-5-1200x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.1s' )
+				+quote-megan({
+					text: 'Fitness is like a relationship. You can’t cheat and expect it to work.',
+					title: '– Virginia Turner'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp( data-wow-delay='.05s' )
+				+thumbnail-classic({
+					img: 'gallery-7-475x354',
+					imgOriginal: 'gallery-7-1200x800-original'
+				})
+			.col-sm-6.col-md-4.col-xl-3.wow.fadeInUp
+				+thumbnail-classic({
+					img: 'gallery-8-475x354',
+					imgOriginal: 'gallery-8-1200x800-original'
+				})
+
+	include ../sections/_section-schedule-1
+
+	//Our coaches
+	section.section.section-xl.bg-gray-19.text-center
+		.container
+			.title-10.wow.fadeInDown Our coaches
+			.divider
+			h4.title-11.wow.fadeInUp All our coaches are fully qualified and LTA accredited. To book a
+				br.d-none.d-lg-block
+				|  lesson or to talk over what you might want, please contact us.
+		// Owl Carousel
+		.owl-carousel.owl-style-8.owl-dots-1( data-items='1', data-sm-items='2', data-md-items='3', data-xl-items='4', data-dots='true', data-autoplay='true', data-smart-speed='500' )
+				+team-classic({
+					img: 'team-12-480x398',
+					name: 'Sam Peterson',
+					position: 'Head Coach, CrossFit'
+				}).block-2
+				+team-classic({
+					img: 'team-13-480x398',
+					name: 'Sophia Smith',
+					position: 'Pilates Coach'
+				}).block-2
+				+team-classic({
+					img: 'team-14-480x398',
+					name: 'Patrick Stuart',
+					position: 'Fitness Coach'
+				}).block-2
+				+team-classic({
+					img: 'team-15-480x398',
+					name: 'Ann Williams',
+					position: 'Yoga/Fitness Coach'
+				}).block-2
+				+team-classic({
+					img: 'team-17-480x398',
+					name: 'Diana Ward',
+					position: 'Gym Instructor'
+				}).block-2
+				+team-classic({
+					img: 'team-18-480x398',
+					name: 'Ernest Morgan',
+					position: 'Personal Trainer'
+				}).block-2
+				+team-classic({
+					img: 'team-19-480x398',
+					name: 'Sarah Foster',
+					position: 'Zumba Coach'
+				}).block-2
+				+team-classic({
+					img: 'team-20-480x398',
+					name: 'Earl Allen',
+					position: 'Bodybuilding Coach'
+				}).block-2
+
+	//Why Choose Us
+	section.section.section-xl.bg-default.text-center
+		.container
+			.title-10.wow.fadeInDown Select your Package
+			.divider
+			h4.title-11.wow.fadeInUp We provide a variety of pricing options so that you could select what
+				br.d-none.d-lg-block
+				|  you want for your fitness needs and goals.
+			.row.row-xl.row-30.row-lg-50
+				.col-sm-6.col-md-4.wow.fadeInUp( data-wow-delay='.05s' )
+					+pricing({
+						title: 'Basic',
+						subtitle: 'For Beginners',
+						price: '40',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' }
+						]
+					}).pricing-2.block-md
+						.pricing-information
+							.icon.mdi.mdi-information-outline
+							.pricing-information-text Train as often as you like
+								br
+								| with no commitment.
+
+				.col-sm-6.col-md-4.wow.fadeInUp
+					+pricing({
+						title: 'Standard',
+						subtitle: 'For Regular clients',
+						price: '65',
+						buttonClass: 'button-primary button-shadow',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' },
+							{ text: 'CrossFit' },
+							{ text: 'Yoga' }
+						]
+					}).pricing-2.block-md
+						.pricing-brand
+							+logo
+							.pricing-text-1 ecommends
+
+				.col-sm-6.col-md-4.wow.fadeInUp( data-wow-delay='.05s' )
+					+pricing({
+						title: 'Premium',
+						subtitle: 'For Advanced level',
+						price: '95',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' },
+							{ text: 'CrossFit' },
+							{ text: 'Yoga' },
+							{ text: 'Personal Trainer' }
+						]
+					}).pricing-2.block-md
+
+	//CTA
+	+parallax({
+		img: 'parallax-4',
+		innerClass: 'section-xxl section-inset-7'
+	}).bg-gray-19.text-right
+		.container: .row.justify-content-end: .col-sm-8.col-lg-6.wow.fadeInRight: .inset-xl-left-70
+			.title-10 Try GoSport workouts now
+			.divider
+			h3.text-transform-none Are you ready to change  your life for the better?
+			p.big.text-white Start your free GoSport trial with one of our workouts. Pick what you want to find out what suits you the most!
+			a.button.button-lg.button-primary.offset-top-3( href='#' ) Get a free workout
+
+	//Latest News
+	section.section.section-xl.bg-gray-100.text-center
+		.container
+			.title-10.wow.fadeInDown Fitness blog
+			.divider
+			h3.text-transform-none.wow.fadeInUp Latest News
+			.row.row-xl.row-30
+				.col-sm-6.wow.fadeInLeft
+					+post({
+						img: 'post-2-570x367',
+						tag: { class: 'post-tag-white-outline', text: 'Fitness' },
+						title: 'Individual Training: Where to Begin and what to expect',
+						time: { date: '2019-05-15', text: 'May 15, 2019' }
+					}).block-xl
+				.col-sm-6.wow.fadeInRight
+					+post-modern({
+						img: 'post-3-570x367',
+						tag: { class: 'post-tag-green', text: 'News' },
+						title: 'Best music for various workouts: Our Top 10 Selection',
+						text: 'In this post, we would like o share with you some of our...',
+						time: { date: '2019-05-15', text: 'May 15, 2019' }
+					}).block-xl
+				.col-sm-6.wow.fadeInLeft
+					+post-modern({
+						mod: 'flex-lg-row-reverse',
+						img: 'post-23-570x367',
+						tag: { class: 'post-tag-yellow', text: 'Traning' },
+						title: 'How to Maintain a Perfect Muscular Body: tips from GoSport',
+						text: 'Everyone dreams of having a perfect body. Though it may...',
+						time: { date: '2019-05-15', text: 'May 15, 2019' }
+					}).block-xl.post-modern-image-left
+				.col-sm-6.wow.fadeInRight
+					+post({
+						img: 'post-1-570x367',
+						tag: { class: 'post-tag-white-outline', text: 'Video' },
+						title: '10 Basic Elements of a Proper Athletic Training',
+						time: { date: '2019-05-29', text: 'May 29, 2019' }
+					}).block-xl
+
+	//Contacts
+	section.section.section-lg.bg-gray-19
+		.container: .row.row-xl.row-30.box-ellen-wrap
+			.col-sm-4.wow.fadeInUp( data-wow-delay='.05s' )
+				.box-ellen
+					.box-ellen-icon.mdi.mdi-map
+					.heading-5.box-ellen-title Address
+					.big.box-ellen-text: a( href='#' ) 652 Main Road, Apt 12
+						br.d-block.d-sm-none.d-md-block
+						|  New York, USA 10033
+			.col-sm-4.wow.fadeInUp
+				.box-ellen
+					.box-ellen-icon.mdi.mdi-wallet-giftcard
+					.heading-5.box-ellen-title Fitness for Everyone
+					a.button.button-sm.button-white-outline-2( href='#' ) Sign up now
+			.col-sm-4.wow.fadeInUp( data-wow-delay='.05s' )
+				.box-ellen
+					.box-ellen-icon.mdi.mdi-phone-in-talk
+					.heading-5.box-ellen-title Let's stay in touch
+					.big.box-ellen-text
+						a( href='tel:#' ) +61 3 8376 6284
+						br
+						a( href='mailto:#' ) info@demolink.org
+
+	include ../sections/_footer-creative

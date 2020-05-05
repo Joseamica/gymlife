@@ -1,0 +1,45 @@
+extends ../_skeleton
+
+include ../components/_posts
+
+block variables
+	- pageName = 'Events'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Events
+	section.section.section-lg.bg-default
+		.container: .row.row-30.row-md-50.row-lg-70
+			.col-sm-6
+				+post({
+					img: 'post-12-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Los angeles' },
+					title: 'Women’s half marathon: <br>spring 2019',
+					time: { date: '2019-05-29', text: 'May 29, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-13-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'New York' },
+					title: 'New york Half Marathon: <br>winter 2019',
+					time: { date: '2019-05-15', text: 'May 15, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-14-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Atlanta' },
+					title: 'Kids & Teens Half Marathon: <br>Summer 2019',
+					time: { date: '2019-05-05', text: 'May 5, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-15-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Seattle' },
+					title: 'RACE professional Marathon: <br>Autumn 2019',
+					time: { date: '2019-05-03', text: 'May 3, 2019' }
+				}).block-xl
+
+	include ../sections/_footer-classic

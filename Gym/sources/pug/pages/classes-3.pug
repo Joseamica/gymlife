@@ -1,0 +1,84 @@
+extends ../_skeleton
+
+include ../components/_services
+
+block variables
+	- pageName = 'Classes #3'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Classes
+	section.section.section-xl.bg-gray-100
+		.container: .row.row-xl.row-30.row-md-50.row-xl-80.justify-content-center.service-modern-wrap
+			.col-sm-10.col-md-6
+				+service-modern({
+					img: 'service-11-570x363',
+					title: 'Daily WoD',
+					text: 'with Frank Johnson, Cynthia Hernandez, Larry Carter'
+				}).block-xl
+					ul.service-modern-schedule
+						li
+							.service-modern-days Sat
+							.big.service-modern-time 10:00 am
+						li
+							.service-modern-days Sun
+							.big.service-modern-time 7:00 pm
+						li
+							.service-modern-days Mon
+							.big.service-modern-time 11:00 am
+
+			.col-sm-10.col-md-6
+				+service-modern({
+					img: 'service-12-570x363',
+					title: 'Endurance Training',
+					text: 'with Martha Lewis, Joyce Hughes, Dorothy Bennett'
+				}).block-xl
+					ul.service-modern-schedule
+						li
+							.service-modern-days Sat
+							.big.service-modern-time 10:00 am
+						li
+							.service-modern-days Sun
+							.big.service-modern-time 7:00 pm
+						li
+							.service-modern-days Mon
+							.big.service-modern-time 11:00 am
+
+			.col-sm-10.col-md-6
+				+service-modern({
+					img: 'service-13-570x363',
+					title: 'Express WoD',
+					text: 'with Philip Perez, Earl Allen, Judy Mitchell'
+				}).block-xl
+					ul.service-modern-schedule
+						li
+							.service-modern-days Sat
+							.big.service-modern-time 10:00 am
+						li
+							.service-modern-days Sun
+							.big.service-modern-time 7:00 pm
+						li
+							.service-modern-days Mon
+							.big.service-modern-time 11:00 am
+
+			.col-sm-10.col-md-6
+				+service-modern({
+					img: 'service-14-570x363',
+					title: 'Fundamentals',
+					text: 'with Jessica Roberts, Ann Torres, Jonathan Anderson'
+				}).block-xl
+					ul.service-modern-schedule
+						li
+							.service-modern-days Sat
+							.big.service-modern-time 10:00 am
+						li
+							.service-modern-days Sun
+							.big.service-modern-time 7:00 pm
+						li
+							.service-modern-days Mon
+							.big.service-modern-time 11:00 am
+
+	include ../sections/_footer-classic

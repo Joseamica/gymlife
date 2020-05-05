@@ -1,0 +1,94 @@
+extends ../_skeleton
+
+include ../components/_products
+include ../components/_pagination
+
+block variables
+	- pageName = 'Shop'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Products
+	section.section.section-lg.bg-default
+		.container
+			.product-filter
+				form.rd-form.form-style-2.form-style-3.row.no-gutters.bordered-4
+					.col-sm-6.col-md-4
+						.select-wrap
+							select( data-placeholder='See all categories' )
+								option( label='placeholder' )
+								option Accessories
+								option Devices
+								option Equipment
+								option Hygiene
+								option Shoewear
+					.col-sm-6.col-md-4
+						.select-wrap
+							select( data-placeholder='Sort by newness' )
+								option( label='placeholder' )
+								option Sort by alphabet
+								option Sort by price, ascending
+								option Sort by price, descending
+					.col-md-4
+						.form-wrap.form-search
+							label.form-label( for='rd-search-form-input' ) Search
+							input.form-input( id='rd-search-form-input' type='text', name='s' autocomplete='off' )
+							button.button-search.mdi.mdi-magnify( type='submit' )
+
+			.row.row-xl.row-30.row-md-50.row-xl-70
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Equipment',
+						title: '5 lbs Dumb-bells',
+						img: 'product-1-300x240',
+						price: '11'
+					}).block-md
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Devices',
+						title: 'Blue Fitness Tracker',
+						img: 'product-2-300x240',
+						price: '250'
+					}).block-md
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Hygiene',
+						title: 'Set of 5 Сotton Towels',
+						img: 'product-3-300x240',
+						price: '15'
+					}).block-md
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Devices',
+						title: 'Green Fitness Tracker',
+						img: 'product-4-300x240',
+						price: '250'
+					}).block-md
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Accessories',
+						title: 'Light Blue Yoga Mat',
+						img: 'product-5-300x240',
+						price: '19'
+					}).block-md
+				.col-sm-6.col-lg-4
+					+product({
+						category: 'Shoewear',
+						title: 'Red LED Sneakers',
+						img: 'product-6-300x240',
+						price: '18'
+					}).block-md
+
+			.pagination-wrap
+				+pagination-bootstrap([
+					{prev: '#', disabled: true},
+					{link: '#', active: true},
+					{link: '#'},
+					{link: '#'},
+					{next: '#'}
+				])
+
+	include ../sections/_footer-classic

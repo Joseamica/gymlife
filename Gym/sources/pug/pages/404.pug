@@ -1,0 +1,18 @@
+extends ../_skeleton
+
+block variables
+	- pageName = '404'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Button Sizes
+	section.section.section-lg.bg-default.text-center
+		.container
+			.title-3: span.text-gradient-1 404
+			h5.title-4 Page Not Found
+			a.button.button-gray-5( href='./' ) Go to home page
+
+	include ../sections/_footer-classic

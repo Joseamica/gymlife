@@ -1,0 +1,64 @@
+extends ../_skeleton
+
+include ../components/_services
+
+block variables
+	- pageName = 'Classes'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Classes
+	section.section.section-xl.bg-gray-100
+		.container: .row.row-30.row-md-50.row-xl-80
+			.col-lg-6
+				+service({
+					img: 'service-1-570x319',
+					title: 'Cardio Training',
+					text: 'Greatly improve your health with our cardio workouts.',
+					user: {
+						img: 'user-1-57x57',
+						name: 'Patrick Stuart'
+					},
+					time: '60'
+				}).block-xl
+
+			.col-lg-6
+				+service({
+					img: 'service-2-570x319',
+					title: 'Endurance Training',
+					text: 'Increase your stamina with Endurance workouts.',
+					user: {
+						img: 'user-2-57x57',
+						name: 'Ann Williams'
+					},
+					time: '60'
+				}).block-xl
+
+			.col-lg-6
+				+service({
+					img: 'service-3-570x319',
+					title: 'Crossfit',
+					text: 'Spice up your workout routine with CrossFit training.',
+					user: {
+						img: 'user-3-57x57',
+						name: 'Kate McMillan'
+					},
+					time: '45'
+				}).block-xl
+
+			.col-lg-6
+				+service({
+					img: 'service-4-570x319',
+					title: 'Pilates',
+					text: 'Get a great full-body workout without fancy equipment.',
+					user: {
+						img: 'user-4-57x57',
+						name: 'Sophia Smith'
+					},
+					time: '45'
+				}).block-xl
+
+	include ../sections/_footer-classic

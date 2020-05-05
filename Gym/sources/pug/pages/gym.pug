@@ -1,0 +1,311 @@
+extends ../_skeleton
+
+include ../components/_quote
+include ../components/_boxes
+include ../components/_posts
+include ../components/_services
+include ../components/_team
+
+block variables
+	-
+		var
+			pageName = 'Gym',
+			style = '5';
+
+		logo = {
+			default: 'logo-default-5-240x60.png',
+			inverse: 'logo-inverse-5-240x60.png',
+			name: 'YGYM'
+		};
+
+block page
+	include ../sections/_header-jean
+	include ../sections/_swiper-slider-6
+
+	.boxed-1
+		// Welcome
+		section.section.section-xxl.section-inset-10.bg-default
+			.container.container-style-4
+				.title-group
+					.title-group-right.wow.fadeInUp
+						.title-18
+							span since
+							span.decor
+							span 1996
+					.title-group-left.wow.fadeInRight
+						h2.title-17 Welcome to YGYM
+						p.big Known by 3,000 diverse members and guests as the cleanest gym in the world, YGYM provides a welcoming and friendly atmosphere. Our 20,000 square feet houses huge cardiovascular areas equipped with Cardio Theater, an expansive toning and weight training facility, a private aerobics room and much more!
+				.row.row-30.row-md-50.row-xl.offset-top-4
+					.col-sm-8.col-md-6.col-lg-3.col-xl-5.wow.fadeInUp
+						+img('image-11-579x540')
+					.col-lg-9.col-xl-7.wow.fadeInUp( data-wow-delay='.05s' )
+						+quote({
+							text: 'We are revolutionizing fitness to bring you the best gym experience in the US. You can enjoy a variety of benefits that we offer our clients at YGYM.'
+						}).quote-2
+						.row.row-30.row-md-50.row-xxl-60
+							.col-sm-6.wow.fadeInUp
+								+box-creative({
+									unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+									icon: 'linearicons-bench-press',
+									title: 'Modern Equipment',
+									text: 'We use only the latest equipment and gear for workouts and gym classes.'
+								}).box-creative-green.text-center.text-sm-left
+							.col-sm-6.wow.fadeInUp( data-wow-delay='.05s' )
+								+box-creative({
+									unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+									icon: 'linearicons-apple',
+									title: 'Healthy Eating',
+									text: 'Need a piece of advice on improving your nutrition? We have what you need.'
+								}).box-creative-yellow.text-center.text-sm-left
+							.col-sm-6.wow.fadeInUp
+								+box-creative({
+									unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+									icon: 'linearicons-smile',
+									title: 'Friendly Coaches',
+									text: 'Our team consists of friendly and highly qualified coaches who are ready to help.'
+								}).box-creative-rose.text-center.text-sm-left
+							.col-sm-6.wow.fadeInUp( data-wow-delay='.05s' )
+								+box-creative({
+									unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+									icon: 'linearicons-map2',
+									title: 'Perfect Location',
+									text: 'Our gym is located in the downtown area and can be easily reached.'
+								}).box-creative-turquoise.text-center.text-sm-left
+
+		// News and Events
+		section.section.section-xxl.section-inset-10
+			.container.container-style-4
+				h2.title-17.wow.fadeInRight News and Events
+				.row.row-xl.row-30
+					.col-md-6: .row.row-30
+						.col-sm-6.col-md-12.wow.fadeInUp
+							+post-modern-1({
+								img: 'post-26-418x326',
+								tag: { class: 'post-tag-green', text: 'Health' },
+								title: 'Setting the Proper Foundations of Regular Workouts at the Gym',
+								time: { date: '2019-05-15', text: 'May 15, 2019' }
+							}).post-modern-1
+						.col-sm-6.col-md-12.wow.fadeInUp
+							+post-modern-1({
+								mod: 'flex-lg-row-reverse',
+								img: 'post-27-418x326',
+								tag: { class: 'post-tag-primary', text: 'Tips' },
+								title: 'Why You Need Individual Training and What Benefits it Has For You',
+								time: { date: '2019-05-15', text: 'May 15, 2019' }
+							}).post-modern-1
+
+					.col-md-6.wow.fadeInUp( data-wow-delay='.05s' )
+						+post-1({
+							img: 'post-28-814x683',
+							tag: { class: 'post-tag-red', text: 'Sale' },
+							title: 'Meet the Summer.',
+							text: 'Prepare for the summer season with this special offer.',
+							time: { date: '2019-05-29', text: 'May 29, 2019' }
+						}).post-1
+							+img('image-12-100x50.png')
+
+		// News and Events
+		section.section.section-xxl.section-inset-10
+			.container.container-style-4
+				.group-lg.group-justify.align-items-center
+					h2.title-17.wow.fadeInRight Our Classes
+					div.wow.fadeInUp: a.button.button-sm.button-default-outline( href='classes.html' ) View all classes
+			// Owl Carousel
+			.owl-carousel.owl-style-13( data-loop='false', data-items='1', data-sm-items='2', data-md-items='3', data-xl-items='4', data-margin='13', data-dots='true', data-mouse-drag='false' )
+				+service-joan({
+					img: 'service-26-444x360',
+					title: 'Boxing',
+					text: 'Join our challenging and fun boxing classes to get a great cardio workout.'
+				}).block-2.wow.fadeIn
+				+service-joan({
+					img: 'service-27-444x360',
+					title: 'CrossFit',
+					text: 'Our CrossFit classes are perfect for any athletes from beginners to advanced.'
+				}).block-2.wow.fadeIn( data-wow-delay='.05s' )
+				+service-joan({
+					img: 'service-28-444x360',
+					title: 'Powerlifting',
+					text: 'Increase your strength and develop your powerlifting techniques with our coaches.'
+				}).block-2.wow.fadeIn( data-wow-delay='.1s' )
+				+service-joan({
+					img: 'service-29-444x360',
+					title: 'Body Conditioning',
+					text: 'This class will help you increase your strength, speed, and endurance.'
+				}).block-2.wow.fadeIn( data-wow-delay='.15s' )
+
+		// BMI Calculator
+		section.section.section-xxl.section-inset-10
+			.container.container-style-4
+				h2.title-17.wow.fadeInRight BMI Calculator
+				.row.row-30.row-md-50.row-xl
+					.col-lg-5.col-xl-6.col-xxl-7.wow.fadeInUp: .inset-xxl-right-1
+						+quote-debbie({
+							img: 'image-14-175x57.png',
+							author: 'John Smith, ceo ”YGYM”',
+							text: 'At YGYM, we believe very strongly in fitness as a lifestyle and in the health benefits it can mean for your life.'
+						})
+						+img('image-13-897x657')
+					.col-lg-7.col-xl-6.col-xxl-5.box-calculator.wow.fadeInUp( data-wow-delay='.05s' )
+						p.big Our BMI calculator generates the number of calories your body burns per day at rest. Your BMI with activity factor define the number of calories your body burns per day based on the activity factor you selected.
+						form.rd-form: .row.row-20.gutter-20
+							.col-sm-6
+								.form-wrap
+									input#calculator-height.form-input( type='text', name='name' )
+									label.form-label( for='calculator-height' ) Height (ft)
+							.col-sm-6
+								.form-wrap
+									input#calculator-weight.form-input( type='text', name='name' )
+									label.form-label( for='calculator-weight' ) Weight (lbs)
+							.col-sm-6
+								.form-wrap
+									input#calculator-age.form-input( type='text', name='name' )
+									label.form-label( for='calculator-age' ) Age
+							.col-sm-6
+								.select-wrap
+									select
+										option Male
+										option Female
+
+						.group-lg.group-custom-2.align-items-center
+							div: button.button.button-default-outline( type='submit' ) Calculate
+							div
+								ul.box-calculator-list-results
+									li Your BMI is:
+										span.box-calculator-result 19
+									li Weight status is:
+										span.box-calculator-result Healthy
+
+						.table-info-wrap.table-info-wrap-2: .table-custom-responsive
+							include ../includes/_table-info
+
+		// CTA
+		section.section.bg-gray-21.text-center.vide.vide-1( data-vide-bg='video/video', data-vide-options='posterType:jpg' )
+			.section-xxl.section-inset-11
+				.container
+					h5.title-20.wow.fadeInUp Free trial
+					h1.title-19.wow.fadeInUp Get your
+					a.button.button-lg.button-primary.wow.fadeInUp( href='classes.html' ) Join now
+					h1.title-19.wow.fadeInUp Free Workout
+
+		// Find Your Class
+		section.section.section-xxl.section-inset-10.bg-default
+			.container.container-style-4
+				.title-group
+					.title-group-right.wow.fadeInUp
+						.title-18
+							span 3400
+							span.decor
+							span sq.m
+					.title-group-left.wow.fadeInRight
+						h2.title-17 Find Your Class
+						p.big Our gym has space for any kind of workout. With top-notch equipment and professional coaches, it’s easy to find what you need to stay healthy. Below you will find detailed description of our gym’s rooms and the schedule of regular workouts that take place at YGYM.
+
+				.row.row-30.row-md-50.row-xl
+					.col-xl-6.index-1.wow.fadeInUp
+						.map
+							+img('map-3-735x682')
+							.heading-4.map-title YGYM Plan
+							.map-point.map-point-5
+								+box-leah({
+									img: 'class-1-173x191',
+									title: 'Dressing Room',
+									square: '100 sq.m.',
+									text: 'A spacious dressing room with a shower and a toilet.'
+								})
+							.map-point.map-point-4
+								+box-leah({
+									img: 'class-2-173x191',
+									title: 'Cardio Room',
+									square: '170 sq.m.',
+									text: 'This room contains a variety of equipment for cardio workouts.'
+								})
+							.map-point.map-point-3
+								+box-leah({
+									img: 'class-3-173x191',
+									title: 'CrossFit Room',
+									square: '150 sq.m.',
+									text: 'Enjoy your CrossFit workout in this well-equipped room.'
+								})
+							.map-point.map-point-1
+								+box-leah({
+									img: 'class-4-173x191',
+									title: 'Reception',
+									square: '50  sq.m.',
+									text: 'Here our guests get the latest updates about our gym.'
+								}).box-leah-1
+							.map-point.map-point-2
+								+box-leah({
+									img: 'class-5-173x191',
+									title: 'Training Room',
+									square: '170 sq.m.',
+									text: 'This room is designed for any kind of training and workouts.'
+								})
+
+					.col-xl-6.wow.fadeInUp( data-wow-delay='.05s' ): .inset-xxl-left-2
+						include ../includes/_calendar
+
+		// News and Events
+		section.section.section-xxl.section-inset-10
+			// Owl Carousel
+			.owl-carousel( data-loop='false', data-items='1', data-sm-items='2', data-lg-items='3', data-xl-items='4', data-dots='true', data-mouse-drag='false' )
+				+team({
+					img: 'team-1-370x314',
+					position: 'CrossFit Coach',
+					name: 'Patrick Stuart'
+				}).team-1.block-2.wow.fadeIn
+				+team({
+					img: 'team-2-370x314',
+					position: 'Fitness Coach',
+					name: 'Ann Williams'
+				}).team-1.block-2.wow.fadeIn( data-wow-delay='.05s' )
+				+team({
+					img: 'team-3-370x314',
+					position: 'Powerlifting coach',
+					name: 'Sam Peterson'
+				}).team-1.block-2.wow.fadeIn( data-wow-delay='.1s' )
+				+team({
+					img: 'team-4-370x314',
+					position: 'Body conditioning',
+					name: 'Sophia Smith'
+				}).team-1.block-2.wow.fadeIn( data-wow-delay='.15s' )
+
+		// Testimonials
+		section.section.section-xxl.section-inset-10.text-center
+			.container.container-style-4
+				.group-lg.group-justify.align-items-center
+					h2.title-17.wow.fadeInRight Testimonials
+					div.wow.fadeInUp: .group-md.group-middle
+						#owl-nav-8.owl-nav-2.owl-nav-3
+						a.button.button-sm.button-primary( href='classes.html' ) View more
+				// Owl Carousel
+				.owl-carousel.owl-style-14( data-items='1', data-md-items='2', data-xl-items='3', data-margin='30', data-xxl-margin='80', data-autoplay='false', data-navigation-class='#owl-nav-8' )
+					+quote-jenny({
+						author: 'Louise Turner',
+						age: '29 Years',
+						text: 'I’ve been training with YGYM for about a year now. They are serious and professional with what they do. I’ve lost over 20% body fat and never felt fitter. Thank you!',
+						result: '24 lb',
+						minus: true
+					})
+					+quote-jenny({
+						author: 'Judith Lopez',
+						age: '18 Years',
+						text: 'I trained with YGYM for 3 months and saw a drastic change in my body over that short period of time. Their coaches are incredibly knowledgeable in all areas of fitness.',
+						result: '11 lb',
+						plus: true
+					})
+					+quote-jenny({
+						author: 'Andrew Smith',
+						age: '45 Years',
+						text: 'I’ve been through a few gyms and YGYM is by far my favorite. Yes, the  equipment is new and state-of-the-art, but it is Sam and Ann that  make the exercise experience fun.',
+						result: '33 lb',
+						minus: true
+					})
+					+quote-jenny({
+						author: 'Rachel Thompson',
+						age: '39 Years',
+						text: 'YGYM has a team of highly dedicated trainers and great professionals that can be trusted with helping you achieve the results you’re looking for and helping you go further.',
+						result: '39 lb',
+						minus: true
+					})
+
+	include ../sections/_footer-jean

@@ -1,0 +1,72 @@
+extends ../_skeleton
+
+include ../components/_progress-linear
+include ../components/_schedule
+include ../components/_thumbnails
+
+block variables
+	- pageName = 'Single coach page'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Single coach page
+	section.section.section-xl.bg-default
+		.container: .row.row-30.row-lg-50
+			.col-sm-6.col-md-5.col-lg-6: +img( 'team-11-500x537' )
+			.col-md-7.col-lg-6
+				.team-big
+					.heading-3.team-big-name Ann Williams
+					.team-big-position Yoga/Fitness Coach
+					ul.list-social.list-inline.list-inline-md
+						li: a.icon.mdi.mdi-facebook( href='#' )
+						li: a.icon.mdi.mdi-google( href='#' )
+						li: a.icon.mdi.mdi-twitter( href='#' )
+						li: a.icon.mdi.mdi-pinterest( href='#' )
+					.big.team-big-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gimply dummy text of the printing and typesetting industryorem Ipsum has been the industry's standard dummy texake of the.
+					.progress-linear-wrap
+						+progress-linear({
+							title: 'Crossfit',
+							value: '85'
+						})
+						+progress-linear({
+							title: 'Yoga',
+							value: '80'
+						}).progress-linear-blue
+						+progress-linear({
+							title: 'Cardio',
+							value: '70'
+						}).progress-linear-secondary
+
+	section.section.section-lg.bg-gray-100.text-center
+		.container
+			h5.text-spacing-100 Schedule
+			#accordion1.schedule-wrap( role='tablist', aria-multiselectable='false' )
+				+card-schedule({
+					show: true,
+					parentId: 'accordion1',
+					days: 'Stretching',
+					time: '9:00 am - 10:00 am',
+					name: 'Ann Williams'
+				})
+					+gallery-tab-pane-1
+
+				+card-schedule({
+					parentId: 'accordion1',
+					days: 'Running & Cardio',
+					time: '12:30 pm - 1:00 pm',
+					name: 'Ann Williams'
+				})
+					+gallery-tab-pane-4
+
+				+card-schedule({
+					parentId: 'accordion1',
+					days: 'CrossFit',
+					time: '11:00 am - 12:30 pm',
+					name: 'Ann Williams'
+				})
+					+gallery-tab-pane-3
+
+	include ../sections/_footer-classic

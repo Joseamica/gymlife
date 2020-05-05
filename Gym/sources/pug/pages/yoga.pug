@@ -1,0 +1,267 @@
+extends ../_skeleton
+
+include ../components/_boxes
+include ../components/_thumbnails
+include ../components/_video
+include ../components/_quote
+include ../components/_events
+include ../components/_products
+
+block variables
+	-
+		var
+			pageName = 'Yoga',
+			style = '4';
+
+		logo = {
+			default: 'logo-default-4-334x100.png',
+			inverse: 'logo-inverse-4-334x100.png',
+			name: 'YogaSun'
+		};
+
+block page
+	include ../sections/_header-modern-1
+	include ../sections/_swiper-slider-4
+
+	//Welcome
+	section.section.section-xxl.bg-default
+		.container: .row.row-50.align-items-center.justify-content-center.justify-content-lg-between
+			.col-sm-8.col-md-6.col-lg-5.circle-wrap
+				.heading-7.title-12 Welcome
+				.wave-wrap
+					+wave
+					h4.title-12 to
+						=' '
+						span.font-weight-medium YogaSun
+				p.big Our yoga studio is a place where you can find balance, harmony and renewal of energy amidst the hustle and bustle of everyday pressure and time.
+				a.button.button-lg.button-primary-outline-2( href='schedule-by-class.html' ) Book a class
+				.circle.circle-1
+			.col-md-6.col-xl-5: .row.row-30.row-lg-50
+				.col-sm-6.col-md-12.wow.fadeInRight
+					+box-creative-2({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-cloud-sun',
+						title: 'Get rid of stress',
+						text: 'Yoga can help you calm down and relieve stress from your daily activities.'
+					}).text-center.text-sm-left
+				.col-sm-6.col-md-12.wow.fadeInRight
+					+box-creative-2({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-key',
+						title: 'Balance body & mind',
+						text: 'Achieve balance of your body and mind through regular yoga classes at YogaSun.'
+					}).box-creative-turquoise.text-center.text-sm-left
+				.col-sm-6.col-md-12.wow.fadeInRight
+					+box-creative-2({
+						unit: 'flex-column flex-md-row align-items-center align-items-sm-start',
+						icon: 'linearicons-leaf',
+						title: 'Healthy daily life',
+						text: 'Improve your life and health with tips from our qualified coaches.'
+					}).box-creative-yellow.text-center.text-sm-left
+
+	include ../sections/_section-classes
+
+	//Team member
+	section.section
+		.bg-default
+			.container: .row.align-items-center.justify-content-center.justify-content-lg-between
+				.col-md-6.wow.fadeInLeft: .section-xl
+					.heading-7.title-12 Lily Carter
+					h4.title-13.text-primary YogaSun Founder
+					h4.title-13 Immerse into the world of stress-free life and relaxation at YogaSun, where the best yoga practices are available.
+					ul.list-social.list-social-4.list-inline.list-inline-lg
+						li: a.icon.mdi.mdi-instagram( href='#' )
+						li: a.icon.mdi.mdi-facebook( href='#' )
+						li: a.icon.mdi.mdi-youtube-play( href='#' )
+						li: a.icon.mdi.mdi-twitter( href='#' )
+				.col-sm-7.col-md-6.col-lg-auto.align-self-end.circle-wrap.text-center
+					+img('image-8-412x680.png').image-1.wow.fadeInUp
+					.circle.circle-2
+
+	//CTA
+	section.section.section-md.bg-gradient-1
+		.container.wow.fadeInUp: .row.row-30.align-items-xl-center.justify-content-md-between.box-style-1
+			.col-md-7
+				.wave-wrap-1
+					.wave-wrap
+						span: +wave
+						h3.title-14 Improve Your Life
+					p.big.text-white: span.text-spacing-75 Find the harmony for your body and mind at YogaSun.
+			.col-md-auto
+				a.button.button-lg.button-white-outline( href='#' ) Book a Class
+
+	include ../sections/_section-schedule-2
+
+	//Gallery
+	section.section.section-xxl.bg-gray-100
+		.container: .row.row-8.gutter-8( data-lightgallery='group' )
+			.col-md-6: .row.row-8.gutter-8
+				.col-lg-11.col-xl-9.box-style-2.wow.fadeInLeft
+					.heading-7.title-12 Our Best
+						.wave-wrap
+							+wave
+							span Moments
+					p.big Take a look at our gallery, which includes photos and videos of our clients and yoga coaches.
+				.col-lg-12.wow.fadeInUp
+					+thumbnail({
+						img: 'gallery-22-582x299',
+						imgOriginal: 'gallery-22-1200x800-original',
+						text: 'Hot Yoga'
+					}).thumbnail-1
+				.col-sm-6.col-md-12.col-lg-6.wow.fadeInUp
+					+thumbnail({
+						img: 'gallery-23-287x252',
+						imgOriginal: 'gallery-23-1200x800-original',
+						text: 'Ashtanga Yoga'
+					}).thumbnail-1
+				.col-sm-6.col-md-12.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' )
+					+quote-jerry({
+						img: 'quote-1-287x252',
+						text: 'Yoga means addition of energy, strength and beauty to body, mind and soul.',
+						title: '– Amit Ray'
+					})
+			.col-md-6: .row.row-8.gutter-8
+				.col-sm-6.col-md-12.col-lg-6.wow.fadeInUp
+					+thumbnail({
+						img: 'gallery-20-287x252',
+						imgOriginal: 'gallery-20-1200x800-original',
+						text: 'Hatha Yoga'
+					}).thumbnail-1
+				.col-sm-6.col-md-12.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' )
+					+thumbnail({
+						img: 'gallery-21-287x252',
+						imgOriginal: 'gallery-21-1200x800-original',
+						text: 'Candlelight Yoga'
+					}).thumbnail-1
+				.col-lg-12.wow.fadeInUp( data-wow-delay='.05s' )
+					+video-modern({
+						img: 'video-4-582x558',
+						link: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+					}).video-modern-1
+
+	//Testimonials
+	section.section.section-xl.bg-default.text-center
+		.container
+			.heading-7.title-12.wow.fadeInDown Testimonials
+			+wave
+			// Owl Carousel
+			.owl-carousel.owl-style-10.owl-dots-1( data-items='1', data-md-items='2', data-margin='30', data-dots='true', data-autoplay='true' )
+				+quote-beryl({
+					text: '”I love coming to your studio to do yoga. I mostly come to feel the energy in the room that you have created over the years. Within the chaos there is always peace. Thank you for what you do.”',
+					img: 'user-15-80x80',
+					author: 'Rose Cooper',
+					position: 'Designer'
+				}).block-xl
+				+quote-beryl({
+					text: '”I just wanted you to know that you are such an inspiration! I have been thinking about these past 6 weeks and it is difficult to put in words how I feel, we learned, grew, and changed so much. You are the best!”',
+					img: 'user-16-80x80',
+					author: 'Daniel Butler',
+					position: 'Sales Manager'
+				}).block-xl
+				+quote-beryl({
+					text: '”I have thoroughly enjoyed the course and feel so much more enlightened as a result. I now have a whole new perspective and understanding of yoga, whereas, before, I saw it as purely physical.”',
+					img: 'user-17-80x80',
+					author: 'Russell Thomas',
+					position: 'Writer'
+				}).block-xl
+				+quote-beryl({
+					text: '”The last 5 weeks have been a very intensive time for me. I learnt a lot about yoga, asanas, pranayama and meditation. I liked the atmosphere, the hard work and the fun I had with the group and teachers. Thank you!”',
+					img: 'user-18-80x80',
+					author: 'Angela Hall',
+					position: 'Artist'
+				}).block-xl
+
+	//Upcoming Events
+	section.section.section-xl.bg-gray-100
+		.container: .row.row-30.row-md-50.flex-md-row-reverse.justify-content-xl-between
+			.col-md-6.col-xl-5: .inset-xl-right-40
+				.inset-lg-left-100
+					.heading-7.title-12.wow.fadeInUp Upcoming
+						.wave-wrap
+							+wave
+							span Events
+
+				.event-eva-wrap
+					+event-eva({
+						date: '25',
+						month: 'Dec',
+						title: 'Yoga for Mind & Body Conference',
+						location: 'Miami, FL'
+					}).wow.fadeInRight
+					+event-eva({
+						date: '02',
+						month: 'Jul',
+						title: 'Yoga Retreat at the Terme Manzi Hotel',
+						location: 'San Diego, CA'
+					}).wow.fadeInRight
+					+event-eva({
+						date: '14',
+						month: 'Jul',
+						title: 'Yogadance 101: A Series of 5 classes',
+						location: 'Seattle, WA'
+					}).wow.fadeInRight
+
+			.col-md-6.wow.fadeInUp
+				// Event terri
+				article.event-terri.block-xl
+					.event-terri-figure: +img( 'event-4-583x361' )
+					.heading-4.event-terri-title: a( href='blog-post.html' ) Yoga Journal LIVE Conference
+					.big.event-terri-text This conference highlights the experience of yoga and provides various meditation sessions and yoga practices.
+					ul.event-terri-info.list-inline.list-inline-lg
+						li: .event-terri-info-item
+							span.icon.mdi.mdi-map-marker
+							span New York, NY
+						li: .event-terri-info-item.event-terri-info-green
+							span.icon.mdi.mdi-calendar-blank
+							span May 25, 2019
+						li: .event-terri-info-item.event-terri-info-red
+							span.icon.mdi.mdi-clock
+							span 2:30 pm - 5:00 pm
+
+	//Yoga Shop
+	section.section.section-xl.bg-default.text-center
+		.container
+			.heading-7.title-12.wow.fadeInDown Yoga Shop
+			+wave
+			.row.row-xl.row-30.row-md-50.row-xl-70
+				.col-sm-6.col-lg-4.wow.fadeInUp( data-wow-delay='.05s' )
+					+product({
+						category: 'Equipment',
+						title: '5 lbs Dumb-bells',
+						img: 'product-1-300x240',
+						price: '11'
+					}).block-md
+				.col-sm-6.col-lg-4.wow.fadeInUp
+					+product({
+						category: 'Beauty',
+						title: 'Relaxation Perfumes',
+						img: 'product-7-300x240',
+						price: '18'
+					}).block-md
+				.col-sm-6.col-lg-4.wow.fadeInUp( data-wow-delay='.05s' )
+					+product({
+						category: 'Hygiene',
+						title: 'Set of 5 Сotton Towels',
+						img: 'product-3-300x240',
+						price: '15'
+					}).block-md
+
+	//Subscribe
+	+parallax({
+		img: 'parallax-5',
+		innerClass: 'section-xxl'
+	}).bg-gray-100.text-center
+		.container: .row.justify-content-md-center: .col-md-11.col-lg-9.col-xl-8
+			.heading-7.title-12.wow.fadeInDown Subscribe to Us
+			+wave
+			p.big.offset-top-1.wow.fadeInUp Enter your email below to get the latest news and updates from YogaSun.
+			form.rd-form.form-lg.form-style-1.rd-mailform.text-center.wow.fadeInUp( data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php' )
+				.form-wrap
+					input.form-input( id='subscribe-form-email' type='email', name='email', data-constraints='@Email @Required' )
+					label.form-label( for='subscribe-form-email' )
+						span.icon.mdi.mdi-email-outline
+						span Enter your email
+
+				.form-button: button.button.button-gradient.button-shadow( type='submit' ) Subscribe
+
+	include ../sections/_footer-classic-1

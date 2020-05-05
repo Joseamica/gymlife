@@ -1,0 +1,55 @@
+extends ../_skeleton
+
+include ../components/_quote
+include ../components/_schedule
+
+block variables
+	- pageName = 'Single Class'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Classes
+	section.section.section-xl.bg-default
+		.container: .row.row-30
+			.col-lg-5.col-xl-6: .row.row-20.gutter-20
+				.col-sm-6.col-lg-12: +img('service-19-500x300')
+				.col-sm-6.col-lg-12: +img('service-20-500x300')
+
+			.col-md-11.col-lg-7.col-xl-6
+				h3.font-family-base Endurance Training
+				p.big Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Condimentum lacinia quis vel eros. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Quis eleifend quam adipiscing vitae proin sagittis. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+				+quote({
+					text: 'Netus et malesuada fames ac turpis egestas sed tempus. Morbi tristique senectus et.'
+				}).quote-1
+				ul.list-marked.list-2-column.big
+					li Faucibus scelerisque eleifend
+					li Egestas fringilla phasellus
+					li Sit amet justo donec enim
+					li Molestie a iaculis at erat
+
+				a.button.button-lg.button-gradient( href='#' ) Join now
+
+	section.section.section-lg.bg-gray-100.text-center
+		.container
+			h5.text-spacing-100 Schedule
+			.schedule-wrap
+				+schedule({
+					days: 'Monday',
+					time: '9:00 am - 10:00 am',
+					name: 'Sophia Smith'
+				})
+				+schedule({
+					days: 'Tuesday',
+					time: '9:00 am - 10:00 am',
+					name: 'Sophia Smith'
+				})
+				+schedule({
+					days: 'Friday',
+					time: '9:00 am - 10:00 am',
+					name: 'Sophia Smith'
+				})
+
+	include ../sections/_footer-classic

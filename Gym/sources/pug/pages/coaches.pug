@@ -1,0 +1,49 @@
+extends ../_skeleton
+
+include ../components/_team
+
+block variables
+	- pageName = 'Coaches'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Coaches 1
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 Coaches #1
+			include ../includes/_our-team-default
+
+	//Coaches 2
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 Coaches #2
+			.row.row-xl.row-30.gutter-6
+				.col-sm-6.col-lg-3
+					+team-modern({
+						img: 'team-7-290x339',
+						name: 'Sam Peterson',
+						position: 'Crossfit Coach'
+					}).block-1
+				.col-sm-6.col-lg-3
+					+team-modern({
+						img: 'team-8-290x339',
+						name: 'Sophia smith',
+						position: 'Fitness Expert'
+					}).block-1
+				.col-sm-6.col-lg-3
+					+team-modern({
+						img: 'team-9-290x339',
+						name: 'Earl Allen',
+						position: 'Bodybuilding Coach'
+					}).block-1
+				.col-sm-6.col-lg-3
+					+team-modern({
+						img: 'team-10-290x339',
+						name: 'Jessica Robertson',
+						position: 'Crossfit/fitness Coach'
+					}).block-1
+
+	include ../sections/_footer-classic

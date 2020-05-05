@@ -1,0 +1,354 @@
+extends ../_skeleton
+
+include ../components/_video
+include ../components/_boxes
+include ../components/_events
+include ../components/_counter
+include ../components/_quote
+include ../components/_posts
+
+block variables
+	-
+		var
+			pageName = 'Sport Event'
+
+block page
+	include ../sections/_header-classic-1
+	include ../sections/_swiper-slider-1
+
+	// Next Event
+	section.section.section-xxl.bg-default
+		.container
+			.event-modern
+				.wow.fadeInDown
+					ul.event-modern-info.list-inline.list-inline-xl.big
+						li
+							span.icon.mdi.mdi-flag-outline
+							span distance: 6 Mi
+						li
+							span.icon.mdi.mdi-map-marker
+							span Los angeles
+						li
+							span.icon.mdi.mdi-account-multiple-outline
+							span 10k members
+				.event-modern-time
+					.countdown-2.countdown-style-1( data-type='until', data-time='31 Dec 2019 16:00' )
+					.event-modern-title.wow.fadeIn Next Event
+
+				a.button.button-lg.button-primary-outline.wow.fadeInUp( href='#' ) Take part
+
+	// Our Mission
+	section.section.section-xl.bg-gray-700.position-relative
+		.container: .row.row-30.justify-content-lg-between
+			.col-md-6.col-lg-5.wow.fadeInLeft
+				h2.title-7: span Our Mission
+				h4 Our event unites athletic professionals and enthusiasts to pursue a great goal.
+				p.big We create and promote initiatives that enable people to become and remain physically active regardless and challenge inequality of access to physical activity.
+
+			.col-md-6.position-static
+				+video-2({
+					img: 'video-2-958x584',
+					link: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+				}).video-1.wow.slideInRight.slideInCustom
+
+	// Event Route
+	section.section.section-md.section-inset-3.bg-default.section-decor.section-decor-left-2
+		.container: .row.row-30.align-items-center.align-items-xxl-start.justify-content-sm-end
+			.col-md-6.wow.fadeIn
+				article.event-route.event-route-1
+					+img('map-2-715x655')
+					.event-route-point-1.event-route-extreme-point S
+						+event-route({
+							title: 'Start',
+							text: 'Culver Center'
+						}).event-route-caption-1
+					.event-route-point-3.event-route-point
+						+event-route({
+							title: '2,4 mi',
+							text: 'Farragut Dr'
+						})
+					.event-route-point-2.event-route-point
+						+event-route({
+							title: '1,3 mi',
+							text: 'Menton Ave'
+						})
+					.event-route-point-4.event-route-point
+						+event-route({
+							title: '4 mi',
+							text: 'Sawtelle Blvd'
+						})
+					.event-route-point-5.event-route-point
+						+event-route({
+							title: '5 mi',
+							text: 'Diller Ave'
+						})
+					.event-route-point-6.event-route-extreme-point F
+						+event-route({
+							title: 'Finish',
+							text: 'Slauson Ave'
+						})
+			.col-sm-9.col-md-6.wow.fadeInUp: .inset-xl-left-70
+				h2.title-7: span Event Route
+				h4 The race will begin in Washington Culver and finish in Blanco-Culver Crest covering 6 miles.
+				p.big We have four official water stations along our course as marked on the route map, with more unofficial water stations set up by our volunteers.
+				.group-xl.group-middle.align-items-end
+					div.event-route-info
+						span.heading-1: span.font-weight-thin 6
+						span.heading-3: span.text-primary MI
+						.event-route-info-text distance
+					a.button.button-lg.button-primary-outline( href='#' ) Take part
+
+	section.section.text-center
+		.section-md.bg-default.section-decor.section-decor-left
+			.container: .row.row-xl.no-gutters.bordered-2.ordered-1.wow.fadeInRight
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-bottle',
+						title: 'Water Stations'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-bus2',
+						title: 'Free Transportation'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-clipboard-user',
+						title: 'Quick Registration'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-man-woman',
+						title: 'Comfortable Toilets'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-first-aid',
+						title: 'Medical Support'
+					})
+				.col-sm-6.col-lg-4
+					+box-minimal({
+						icon: 'linearicons-trophy2',
+						title: 'Medals for Winners'
+					})
+
+	// Event
+	section.section.section-xxl.bg-default.text-center.section-decor.section-decor-left.tabs-style-1
+		.tabs-bg-1.bg-gray-700.wow.fadeInUp
+		.tabs-custom
+			.tabs-bg-2.bg-gray-100.wow.fadeInUp
+			.container
+				//Nav tabs
+				ul.nav.nav-tabs
+					li.nav-item( role='presentation' ): a.nav-link.active( href='#tabs-1-1', data-toggle='tab' ): span Opening
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-2', data-toggle='tab' ): span Warming Up
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-3', data-toggle='tab' ): span Main Part
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-4', data-toggle='tab' ): span Awarding
+				.row.row-30.row-md-50
+					.col-md-10.col-lg-6.col-xxl-5
+						//Tab panes
+						.tab-content
+							div#tabs-1-1.tab-pane.fade.show.active
+								.event-minimal-wrap
+									+event-minimal({
+										time: '7.00 am',
+										title: 'Event Opening',
+										text: 'Take part in a special event opening part available to those guests and participants who arrive early.'
+									}).wow.fadeInLeft
+									+event-minimal({
+										time: '7.30 am',
+										title: 'Route Selection',
+										text: 'Event participants get a chance to select a preffered route of our race before it starts.'
+									}).wow.fadeInLeft
+									+event-minimal({
+										time: '8.00 am',
+										title: 'Registration',
+										text: 'When all participants arrive and gather at Culver Center, our volunteers will register them.'
+									}).wow.fadeInLeft
+							div#tabs-1-2.tab-pane.fade
+								.event-minimal-wrap
+									+event-minimal({
+										time: '8.15 am',
+										title: 'Stretching',
+										text: 'To optimize our participants’ performance, we also offer free warm-up that starts with stretching.'
+									})
+									+event-minimal({
+										time: '8.20 am',
+										title: 'Basic Warm-up',
+										text: 'After stretching, we invite everyone to basic warm-up to be better prepared for the race.'
+									})
+									+event-minimal({
+										time: '8.30 am',
+										title: 'Runner Warm-up',
+										text: 'In this very essential part of the warming-up, there is a focus on the movements of a runner.'
+									})
+							div#tabs-1-3.tab-pane.fade
+								.event-minimal-wrap
+									+event-minimal({
+										time: '9.00 am',
+										title: 'General Start',
+										text: 'All adults start their run at 9:00 am after registration and gathering outside of the Culver Center.'
+									})
+									+event-minimal({
+										time: '9.30 am',
+										title: 'Kids’ Race',
+										text: 'If your child is registered, they can also take part in a special race organized for kids and teens.'
+									})
+									+event-minimal({
+										time: '11.45 am',
+										title: 'Race Finish',
+										text: 'Planned time of race finish is set for 11.45 am but event organizers will wait for all finishers.'
+									})
+							div#tabs-1-4.tab-pane.fade
+								.event-minimal-wrap
+									+event-minimal({
+										time: '12.00 pm',
+										title: 'Results',
+										text: 'After all participants arrive at the finish line, organizers will announce the half marathon results.'
+									})
+									+event-minimal({
+										time: '12.15 pm',
+										title: 'Awarding',
+										text: 'Our volunteers and organizers will present awards and certificate to all winners, including children.'
+									})
+									+event-minimal({
+										time: '12.30 pm',
+										title: 'Entertainment',
+										text: 'The entertainment program provided by our partners will begin straight after the award ceremony.'
+									})
+
+					.col-md-8.col-lg-6.col-xxl-7
+						// Owl Carousel
+						.owl-carousel.owl-style-1( data-items='1', data-dots='true', data-autoplay='true' )
+							+img('event-1-556x538')
+							+img('event-2-556x538')
+							+img('event-3-556x538')
+
+	// Our community
+	section.section.bg-gray-700.position-relative
+		.container
+			.row
+				.col-md-5.col-xl-6.index-1: .section-lg.section-inset-4.inset-xl-right-70.wow.fadeInLeft
+					h2.title-7: span Our Community
+					h4 Our half marathon unites a vast number of athletes and running enthusiasts.
+					p.big The community of our event pursues the goal of promoting healthy living among children, teens, and adults. We are also known for widespread charitable work.
+					a.button.button-lg.button-gradient( href='single-class.html' ) Read more
+				.col-md-7.col-xl-6.counter-classic-wrap
+					+counter-classic({
+						value: 45,
+						postfix: 'k',
+						icon: 'mdi mdi-account-multiple-outline',
+						text: 'Average number of people taking part in our half marathons.'
+					}).wow.fadeInRight
+					+counter-classic({
+						value: 78,
+						postfix: '%',
+						icon: 'mdi mdi-account-convert',
+						text: 'Percentage of runners who became our regular participants over the years.'
+					}).wow.fadeInRight
+					+counter-classic({
+						value: 90,
+						postfix: 'k',
+						icon: 'mdi mdi-map',
+						text: 'The total number of participants in all races in the last 5 years.'
+					}).wow.fadeInRight
+
+			.image-classic-wrap
+				+img('image-2-369x284').image-classic.image-classic-1.wow.fadeIn
+				+img('image-3-244x204').image-classic.image-classic-2.wow.fadeIn( data-wow-delay='.1s' )
+				+img('image-4-289x204').image-classic.image-classic-3.wow.fadeIn
+				+img('image-5-196x352').image-classic.image-classic-4.wow.fadeIn
+				+img('image-6-289x204').image-classic.image-classic-5.wow.fadeIn( data-wow-delay='.1s' )
+
+	// Our partners
+	section.section.section-xxl.section-inset-5.bg-default.section-decor.section-decor-top
+		.container.container-style-1.wow.fadeInUp
+			.owl-carousel.owl-style-2( data-items='1', data-nav='true', data-dots='true', data-margin='230', data-smart-speed='400', data-loop='false', data-mouse-drag='false', data-start-item='1' )
+				+quote-classic({
+					img: 'user-10-450x541',
+					author: 'Kate Wilson',
+					text: 'The RACE Half Marathon shows what a well-organized event means. I especially liked the awarding ceremony and how the kids’ race was planned. Thank you!',
+					position: 'First-time Participant'
+				})
+				+quote-classic({
+					img: 'user-11-450x541',
+					author: 'John Smith',
+					text: 'If you are looking for an early winter half marathon there are none better than the RACE Half Marathon! Everything was great during this event, thank you!',
+					position: 'Professional Athlete'
+				})
+
+	// CTA
+	+parallax({
+		img: 'parallax-2',
+		innerClass: 'section-lg'
+	}).bg-gray-700.text-center.parallax-no-fixed
+		.container.wow.fadeInUp
+			h2.title-7: span Do you know what you are capable of?
+			p.big RACE Half Marathon provides you with a great opportunity to check your skills,
+				=' '
+				br.d-none.d-lg-block
+				| strength, endurance and help the local community. What are you waiting for?
+			a.button.button-lg.button-gradient( href='#' ) Sign up now
+
+	// Our partners
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2.title-7.wow.fadeInUp: span Our Partners
+			p.big.wow.fadeInUp We work with an extensive amount of partners and investors who not only help us promote
+				=' '
+				br.d-none.d-xl-block
+				| our events but also make impactful contributions in the life of our community.
+			.row.row-xl.row-30
+				.col-sm-4.col-lg-3.wow.fadeInDown: a.client-classic( href='#' ): +img('client-1-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInDown( data-wow-delay='.05s' ): a.client-classic( href='#' ): +img('client-2-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInDown( data-wow-delay='.1s' ): a.client-classic( href='#' ): +img('client-3-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInDown( data-wow-delay='.15s' ): a.client-classic( href='#' ): +img('client-4-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInUp( data-wow-delay='.15s' ): a.client-classic( href='#' ): +img('client-5-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInUp( data-wow-delay='.1s' ): a.client-classic( href='#' ): +img('client-6-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInUp( data-wow-delay='.05s' ): a.client-classic( href='#' ): +img('client-7-270x145.png')
+				.col-sm-4.col-lg-3.wow.fadeInUp: a.client-classic( href='#' ): +img('client-8-270x145.png')
+
+	// Upcoming events
+	section.section.section-xl.bg-gray-700.text-center
+		.container.container-style-2
+			h2.title-7.wow.fadeInUp: span Upcoming events
+			// Owl Carousel
+			.owl-carousel.ie-carousel( data-items='1', data-md-items='2', data-xl-items='3', data-margin='30', data-dots='true', data-autoplay='true' )
+				+post({
+					img: 'post-2-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'New York' },
+					title: 'New york Half Marathon: <br>winter 2019',
+					time: { date: '2019-05-15', text: 'May 15, 2019' }
+				}).block-xl
+				+post({
+					img: 'post-1-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Los angeles' },
+					title: 'Women’s half marathon: <br>spring 2019',
+					time: { date: '2019-05-29', text: 'May 29, 2019' }
+				}).block-xl
+				+post({
+					img: 'post-4-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Atlanta' },
+					title: 'Kids & Teens Half Marathon: <br>Summer 2019',
+					time: { date: '2019-05-05', text: 'May 5, 2019' }
+				}).block-xl
+				+post({
+					img: 'post-14-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Texas' },
+					title: 'Dallas half marathon: <br>Race to beat Cancer',
+					time: { date: '2019-05-03', text: 'May 3, 2019' }
+				}).block-xl
+				+post({
+					img: 'post-15-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Georgia' },
+					title: 'Kids & Teens Atlanta <br>Charity run',
+					time: { date: '2019-05-29', text: 'May 29, 2019' }
+				}).block-xl
+				+post({
+					img: 'post-16-570x367',
+					tag: { class: 'post-tag-white-outline', text: 'Seattle' },
+					title: 'RACE professional Marathon: <br>Autumn 2019',
+					time: { date: '2019-05-18', text: 'May 18, 2019' }
+				}).block-xl
+
+	include ../sections/_footer-classic

@@ -1,0 +1,22 @@
+//Counters
+section.section.section-lg.bg-gray-700.text-center
+	.container
+		.row.row-30.justify-content-center
+			.col-sm-6.col-md-4
+				+counter({
+					value: 45,
+					postfix: 'k',
+					text: 'Tellus mauris a diam maecenas sed adipiscing commodo elit'
+				}).block-sm
+			.col-sm-6.col-md-4
+				+counter({
+					value: 78,
+					postfix: '%',
+					text: 'Mauris ultrices eros in cursus turpis massa tincidunt dui.'
+				}).block-sm
+			.col-sm-6.col-md-4
+				+counter({
+					value: 90,
+					postfix: 'k',
+					text: 'Lobortis scelerisque dui faucibus in viverra maecenas.'
+				}).block-sm

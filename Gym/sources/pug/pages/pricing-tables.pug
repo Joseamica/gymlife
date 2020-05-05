@@ -1,0 +1,106 @@
+extends ../_skeleton
+
+include ../components/_pricing
+
+block variables
+	- pageName = 'Pricing Tables'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//Pricing
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 #1
+			.row.row-xl.row-30.row-lg-50
+				.col-sm-6.col-md-4
+					+pricing({
+						title: 'Basic',
+						subtitle: 'For Beginners',
+						price: '40',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' }
+						]
+					}).block-md
+						.pricing-information
+							.icon.mdi.mdi-information-outline
+							.pricing-information-text Train as often as you like
+								br
+								| with no commitment.
+
+				.col-sm-6.col-md-4
+					+pricing({
+						title: 'Standard',
+						subtitle: 'For Regular clients',
+						price: '65',
+						buttonClass: 'button-gradient button-shadow',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' },
+							{ text: 'CrossFit' },
+							{ text: 'Yoga' }
+						]
+					}).block-md
+						.pricing-brand
+							+logo
+							.pricing-text-1 Recommends
+
+				.col-sm-6.col-md-4
+					+pricing({
+						title: 'Premium',
+						subtitle: 'For Advanced level',
+						price: '95',
+						list: [
+							{ text: 'Open Gym' },
+							{ text: 'Fitness' },
+							{ text: 'CrossFit' },
+							{ text: 'Yoga' },
+							{ text: 'Personal Trainer' }
+						]
+					}).block-md
+
+	//Pricing
+	section.section.section-xl.bg-default.text-center
+		.container
+			h2 #2
+			.row.row-xl.row-30.row-lg-50.align-items-center
+				.col-sm-6.col-lg-4
+					+pricing-classic({
+						title: 'Basic',
+						subtitle: 'Perfect for beginners',
+						price: '9',
+						list: [
+							{ text: '1-Day Free Trial' },
+							{ text: '50 Class Times Available' },
+							{ text: 'Elementary Workouts' }
+						]
+					}).block-md
+				.col-sm-6.col-lg-4
+					+pricing-classic({
+						title: 'Standard',
+						subtitle: 'Personalzed workouts',
+						price: '28',
+						list: [
+							{ text: 'Drop-In Guests Welcome' },
+							{ text: 'Open Class Workouts are Available' },
+							{ text: 'CrossFit & Specialty Classes' }
+						],
+						buttonClass: 'button-gradient'
+					}).block-md.pricing-classic-1
+				.col-sm-6.col-lg-4
+					+pricing-classic({
+						title: 'Premium',
+						subtitle: 'For experienced clients',
+						price: '40',
+						list: [
+							{ text: 'Unlimited CrossFit Classes' },
+							{ text: 'One Full-Month Fee' },
+							{ text: 'First 25 New Members Only' }
+						],
+						label: 'Power'
+					}).block-md
+
+	include ../sections/_footer-classic

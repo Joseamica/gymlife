@@ -1,0 +1,71 @@
+extends ../_skeleton
+
+include ../components/_posts
+include ../components/_pagination
+
+block variables
+	- pageName = 'News'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs
+
+	//News
+	section.section.section-lg.bg-gray-100
+		.container: .row.row-xl.row-30
+			.col-sm-6
+				+post({
+					img: 'post-1-570x367',
+					tag: { class: 'post-tag-green', text: 'News' },
+					title: '10 Basic Elements of a Proper Athletic Training',
+					time: { date: '2019-05-29', text: 'May 29, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-2-570x367',
+					tag: { class: 'post-tag-blue', text: 'Fitness' },
+					title: 'Individual Training: Where to Begin and what to expect',
+					time: { date: '2019-05-15', text: 'May 15, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post-modern({
+					img: 'post-3-570x367',
+					tag: { class: 'post-tag-green', text: 'News' },
+					title: 'Best music for various workouts: Our Top 10 Selection',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+					time: { date: '2019-05-15', text: 'May 15, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-4-570x367',
+					tag: { class: 'post-tag-red', text: 'Workout' },
+					title: 'How To Build Muscle Fast: The 15-Step Guide',
+					time: { date: '2019-05-05', text: 'May 5, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post({
+					img: 'post-5-570x367',
+					tag: { class: 'post-tag-blue', text: 'Fitness' },
+					title: 'Should You Do Cardio Before Or After Weights?',
+					time: { date: '2019-05-03', text: 'May 3, 2019' }
+				}).block-xl
+			.col-sm-6
+				+post-modern({
+					img: 'post-6-570x367',
+					tag: { class: 'post-tag-yellow', text: 'Food' },
+					title: '6 Easy Sources of Vitamins You Might Be Overlooking',
+					text: 'Id diam vel quam elementum pulvinar etiam non quam.',
+					time: { date: '2019-05-01', text: 'May 1, 2019' }
+				}).block-xl.post-modern-image-right
+
+		.pagination-wrap
+			+pagination-bootstrap([
+				{prev: '#', disabled: true},
+				{link: '#', active: true},
+				{link: '#'},
+				{link: '#'},
+				{next: '#'}
+			])
+
+	include ../sections/_footer-classic

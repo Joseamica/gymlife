@@ -1,0 +1,442 @@
+extends ../_skeleton
+
+include ../components/_boxes
+include ../components/_services
+include ../components/_video
+include ../components/_team
+include ../components/_quote
+include ../components/_pricing
+include ../components/_posts
+include ../components/_thumbnails
+
+block variables
+	-
+		var
+			pageName = 'Crossfit',
+			style = '1';
+
+		logo = {
+			default: 'logo-default-1-410x92.png',
+			inverse: 'logo-inverse-1-410x92.png',
+			name: 'PowerFit'
+		};
+
+block page
+	include ../sections/_header-modern
+	include ../sections/_swiper-slider-2
+
+	section.section.bg-gray-13
+		// Owl Carousel
+		.owl-carousel.owl-style-3( data-loop='false', data-items='1', data-sm-items='2', data-xl-items='3', data-dots='true', data-mouse-drag='false' )
+			+box-abby({
+				subtitle: 'Get in touch',
+				title: 'Contacts'
+			}).wow.fadeInUp( data-wow-delay='.05s' )
+				ul.box-abby-list-contacts.big
+					li
+						span.icon.mdi.mdi-map-marker
+						a( href='#' ) 652 Main Road, Apt 12 New York, USA 10033
+					li
+						span.icon.mdi.mdi-cellphone-android
+						a( href='tel:#' ) +1 800 123 1234
+			+box-abby({
+				subtitle: 'Try crossfit',
+				title: 'First time?'
+			}).wow.fadeInUp
+				a.button.button-white-outline( href='#' ) Get a free Workout
+			+box-abby({
+				subtitle: 'Our classes',
+				title: 'Schedule'
+			}).wow.fadeInUp( data-wow-delay='.05s' )
+				.unit.align-items-center.box-abby-info
+					.unit-left: span.icon.mdi.mdi-calendar-text
+					.unit-body: a.big( href='schedule.html' ) Select your perfect time
+						br
+						| for crossfit
+
+	//Classes
+	section.section.section-xl.bg-gray-100.text-center
+		.container
+			h6.title-8.wow.fadeInUp Wide Variety of Workouts
+			h2.font-weight-bold.wow.fadeInUp Choose a program
+			.row.row-xl.row-30.row-md-50.row-xl-80.justify-content-center.service-modern-wrap
+				.col-sm-10.col-md-6.wow.fadeInLeft
+					+service-modern({
+						img: 'service-11-570x363',
+						title: 'Daily WoD',
+						text: 'with Frank Johnson, Cynthia Hernandez, Larry Carter'
+					}).block-xl.service-modern-1
+						ul.service-modern-schedule
+							li
+								.service-modern-days Sat
+								.big.service-modern-time 10:00 am
+							li
+								.service-modern-days Sun
+								.big.service-modern-time 7:00 pm
+							li
+								.service-modern-days Mon
+								.big.service-modern-time 11:00 am
+
+				.col-sm-10.col-md-6.wow.fadeInRight
+					+service-modern({
+						img: 'service-12-570x363',
+						title: 'Endurance Training',
+						text: 'with Martha Lewis, Joyce Hughes, Dorothy Bennett'
+					}).block-xl.service-modern-1
+						ul.service-modern-schedule
+							li
+								.service-modern-days Sat
+								.big.service-modern-time 10:00 am
+							li
+								.service-modern-days Sun
+								.big.service-modern-time 7:00 pm
+							li
+								.service-modern-days Mon
+								.big.service-modern-time 11:00 am
+
+				.col-sm-10.col-md-6.wow.fadeInLeft
+					+service-modern({
+						img: 'service-13-570x363',
+						title: 'Express WoD',
+						text: 'with Philip Perez, Earl Allen, Judy Mitchell'
+					}).block-xl.service-modern-1
+						ul.service-modern-schedule
+							li
+								.service-modern-days Sat
+								.big.service-modern-time 10:00 am
+							li
+								.service-modern-days Sun
+								.big.service-modern-time 7:00 pm
+							li
+								.service-modern-days Mon
+								.big.service-modern-time 11:00 am
+
+				.col-sm-10.col-md-6.wow.fadeInRight
+					+service-modern({
+						img: 'service-14-570x363',
+						title: 'Fundamentals',
+						text: 'with Jessica Roberts, Ann Torres, Jonathan Anderson'
+					}).block-xl.service-modern-1
+						ul.service-modern-schedule
+							li
+								.service-modern-days Sat
+								.big.service-modern-time 10:00 am
+							li
+								.service-modern-days Sun
+								.big.service-modern-time 7:00 pm
+							li
+								.service-modern-days Mon
+								.big.service-modern-time 11:00 am
+
+			a.button.button-lg.button-default-outline.wow.fadeInUp( href='#' ) Show all programs
+
+	//About us
+	section.section
+		.bg-default
+			.container: .row.justify-content-center.align-items-lg-end.flex-lg-row-reverse.justify-content-xl-between
+				.col-md-11.col-lg-5.wow.fadeInRight: .section-xxl
+					h6.title-8 A few Words about us
+					h2.font-weight-bold #1 Crossfit Studio
+					p.big We’re a family of like-minded and high-spirited people. We come together daily to inspire, challenge, and motivate each other to do more and become more.
+					a.button.button-lg.button-primary( href='#' ) Learn more
+				.col-sm-10.col-md-8.col-lg-7.col-xl-6.wow.fadeIn
+					+video-modern({
+						img: 'video-3-584x628.png',
+						link: 'https://www.youtube.com/watch?v=1UWpbtUupQQ'
+					})
+
+	//Icon List
+	section.section.bg-gray-14
+		.row.no-gutters.bordered-1
+			.col-sm-6.col-xl-3
+				+box-classic-1({
+					icon: 'mdi mdi-wallet',
+					title: 'Reasonable prices',
+					text: 'Our programs are affordably priced and available to all kinds of clients.'
+				}).box-classic-1.wow.fadeInUp
+			.col-sm-6.col-xl-3
+				+box-classic-1({
+					icon: 'mdi mdi-account-star-variant',
+					title: 'Professional Team',
+					text: 'Our coaches have years of experience in CrossFit and various types of fitness.'
+				}).box-classic-1.wow.fadeInUp( data-wow-delay='.05s' )
+			.col-sm-6.col-xl-3
+				+box-classic-1({
+					icon: 'mdi mdi-map-marker',
+					title: 'Best Location',
+					text: 'Our studio is located in the downtown area and is easily accessible via public transport.'
+				}).box-classic-1.wow.fadeInUp( data-wow-delay='.1s' )
+			.col-sm-6.col-xl-3
+				+box-classic-1({
+					icon: 'mdi mdi-trophy-variant',
+					title: 'Premium Equipment',
+					text: 'We use the top-notch equipment & gear for workouts and training programs.'
+				}).box-classic-1.wow.fadeInUp( data-wow-delay='.15s' )
+
+	include ../sections/_section-schedule
+
+	//Our coaches
+	section.section.section-lg.bg-default.text-center
+		.container
+			h6.title-8.wow.fadeInUp True professionals
+			h2.font-weight-bold.wow.fadeInUp Our coaches
+			.row.row-xl.row-30.gutter-6
+				.col-sm-6.col-lg-3.wow.fadeInUp( data-wow-delay='.15s' )
+					+team-modern({
+						img: 'team-7-290x339',
+						name: 'Frank Johnson',
+						position: 'Founder, Crossfit Coach'
+					}).block-1
+				.col-sm-6.col-lg-3.wow.fadeInUp( data-wow-delay='.1s' )
+					+team-modern({
+						img: 'team-8-290x339',
+						name: 'Judy Mitchell',
+						position: 'CrossFit Coach'
+					}).block-1
+				.col-sm-6.col-lg-3.wow.fadeInUp( data-wow-delay='.05s' )
+					+team-modern({
+						img: 'team-9-290x339',
+						name: 'Earl Allen',
+						position: 'Crossfit coach'
+					}).block-1
+				.col-sm-6.col-lg-3.wow.fadeInUp
+					+team-modern({
+						img: 'team-10-290x339',
+						name: 'Jessica Roberts',
+						position: 'Crossfit/Fitness Coach'
+					}).block-1
+
+	//BMI calculator
+	+parallax({
+		img: 'parallax-3',
+		innerClass: 'section-xl'
+	}).bg-gray-14
+		.container: .row.row-xl.row-30.row-lg-50.justify-content-xl-between
+			.col-md-6.col-xl-5.wow.fadeInLeft
+				h3.title-9 BMI calculator chart
+				.table-custom-responsive.table-info-wrap-1.inset-xl-right-40
+					include ../includes/_table-info
+
+			.col-md-6.box-calculator.wow.fadeInRight
+				h3.title-9 Calculate your BMI
+				p This BMI calculator can easily calculate the number of calories your body burns per day at rest.
+				form.rd-form.form-style-4: .row.row-20.gutter-20
+					.col-sm-6
+						.form-wrap
+							input#calculator-2-height.form-input( type='text', name='name' )
+							label.form-label( for='calculator-2-height' ) Height (ft)
+					.col-sm-6
+						.form-wrap
+							input#calculator-2-weight.form-input( type='text', name='name' )
+							label.form-label( for='calculator-2-weight' ) Weight (lbs)
+					.col-sm-6
+						.form-wrap
+							input#calculator-2-age.form-input( type='text', name='name' )
+							label.form-label( for='calculator-2-age' ) Age
+					.col-sm-6
+						.select-wrap
+							select
+								option Male
+								option Female
+
+				.group-lg.group-custom-2.align-items-center
+					div: button.button.button-primary( type='submit' ) Calculate
+					div
+						ul.box-calculator-list-results
+							li Your BMI is:
+								span.box-calculator-result 19
+							li Weight status is:
+								span.box-calculator-result Healthy
+
+	//Testimonials
+	section.section.section-xl.bg-default
+		.container.tabs-custom.tabs-style-2: .row.row-30.justify-content-center
+			.col-md-7.wow.fadeInLeft
+				h6.title-8 Testimonials
+				h2.font-weight-bold Success stories
+				//Tab panes
+				.tab-content.inset-xl-right-40
+					div#tabs-1-1.tab-pane.fade.show.active
+						+quote-modern({
+							text: 'PowerFit’s coaches are absolutely the best! They have the patience of saints and never lose faith in your ability to achieve the unachievable. They always push you to do more.',
+							title: 'Amy Washington',
+							subtitle: 'Lost 80 lbs in 6 months'
+						})
+					div#tabs-1-2.tab-pane.fade
+						+quote-modern({
+							text: 'I’ve been in this club for a year now. I came in with very little CrossFit experience and within a year I have improved tenfold due to the amazing coaching and programming.',
+							title: 'Gary Wood',
+							subtitle: 'Lost 130 lbs in 12 months'
+						})
+					div#tabs-1-3.tab-pane.fade
+						+quote-modern({
+							text: 'I’ve been doing CrossFit for over 5 years and I must say that the programming and coaching at PowerFit are outstanding. They are super personable and not intimidating.',
+							title: 'Eric Thompson',
+							subtitle: 'Lost 90 lbs in 7 months'
+						})
+					div#tabs-1-4.tab-pane.fade
+						+quote-modern({
+							text: 'If you’re looking for a new place to work out, you should try PowerFit. The coaches are amazing — knowledgeable, patient, passionate — and they care about you and your safety.',
+							title: 'Joseph Wilson',
+							subtitle: 'Lost 65 lbs in 4 months'
+						})
+					div#tabs-1-5.tab-pane.fade
+						+quote-modern({
+							text: 'I’d would like to thank PowerFit for amazing 5 months. I can’t believe how much I’ve improved with your coaching. The facility is really the best I’ve ever trained in.',
+							title: 'Helen Russell',
+							subtitle: 'Lost 60 lbs in 5 months'
+						})
+			.col-md-5.wow.fadeInRight
+				//Nav tabs
+				ul.nav.nav-tabs
+					li.nav-item( role='presentation' ): a.nav-link.active( href='#tabs-1-1', data-toggle='tab' ): +img('user-5-89x89')
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-2', data-toggle='tab' ): +img('user-12-89x89')
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-3', data-toggle='tab' ): +img('user-13-89x89')
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-4', data-toggle='tab' ): +img('user-14-89x89')
+					li.nav-item( role='presentation' ): a.nav-link( href='#tabs-1-5', data-toggle='tab' ): +img('user-4-89x89')
+
+
+	//Pricing plans
+	section.section.section-lg.bg-gray-14.text-center
+		.container
+			h6.title-8.wow.fadeInUp Pricing plans
+			h2.font-weight-bold.wow.fadeInUp Choose What You Need
+			.row.row-xl.row-30.row-lg-50.align-items-center
+				.col-sm-6.col-lg-4.wow.fadeInUp( data-wow-delay='0.05s' )
+					+pricing-classic({
+						title: 'Basic',
+						subtitle: 'Perfect for beginners',
+						price: '9',
+						list: [
+							{ text: '1-Day Free Trial' },
+							{ text: '50 Class Times Available' },
+							{ text: 'Elementary Workouts' }
+						],
+						buttonClass: 'button-gray-18'
+					}).block-md.pricing-classic-2
+				.col-sm-6.col-lg-4.wow.fadeInUp
+					+pricing-classic({
+						title: 'Standard',
+						subtitle: 'Personalzed workouts',
+						price: '28',
+						list: [
+							{ text: 'Drop-In Guests Welcome' },
+							{ text: 'Open Class Workouts are Available' },
+							{ text: 'CrossFit & Specialty Classes' }
+						],
+						buttonClass: 'button-primary'
+					}).block-md.pricing-classic-1.pricing-classic-2
+				.col-sm-6.col-lg-4.wow.fadeInUp( data-wow-delay='0.05s' )
+					+pricing-classic({
+						title: 'Premium',
+						subtitle: 'For experienced clients',
+						price: '40',
+						list: [
+							{ text: 'Unlimited CrossFit Classes' },
+							{ text: 'One Full-Month Fee' },
+							{ text: 'First 25 New Members Only' }
+						],
+						buttonClass: 'button-gray-18',
+						label: 'Power'
+					}).block-md.pricing-classic-2
+
+	//Our blog
+	section.section.section-lg.section-inset-6.bg-gray-100.text-center
+		.container
+			h6.title-8.wow.fadeInUp Our blog
+			h2.font-weight-bold.wow.fadeInUp Latest posts
+			// Owl Carousel
+			.owl-carousel.owl-style-4.owl-nav-1( data-items='1', data-nav='true', data-dots='true', data-autoplay='true', data-margin='30', data-xl-margin='170', data-smart-speed='400' )
+				.row.row-30
+					.col-sm-6
+						+post-creative({
+							img: 'post-17-448x299',
+							title: 'Here’s our Summer Workout Routine for Women',
+							tag: { class: 'post-tag-yellow', text: 'Workouts' },
+							time: { date: '2019-03-12', text: 'March 12, 2019' }
+						})
+					.col-sm-6
+						+post-creative({
+							img: 'post-18-448x299',
+							title: 'How to Keep Your Body Healthy Over the Festive Season',
+							tag: { class: 'post-tag-secondary', text: 'Health' },
+							time: { date: '2019-04-15', text: 'April 15, 2019' }
+						})
+				.row.row-30
+					.col-sm-6
+						+post-creative({
+							img: 'post-19-448x299',
+							title: 'What It Really Takes to Get Six Pack Abs',
+							tag: { class: 'post-tag-primary', text: 'Tips' },
+							time: { date: '2019-05-22', text: 'May 22, 2019' }
+						})
+					.col-sm-6
+						+post-creative({
+							img: 'post-20-448x299',
+							title: 'Give your fitness a boost with our Crossfit challenge',
+							tag: { class: 'post-tag-primary', text: 'Crossfit' },
+							time: { date: '2019-01-18', text: 'February 18, 2019' }
+						})
+				.row.row-30
+					.col-sm-6
+						+post-creative({
+							img: 'post-21-448x299',
+							title: 'How to Tackle Your Favorite CrossFit Benchmark Workout',
+							tag: { class: 'post-tag-yellow', text: 'Workouts' },
+							time: { date: '2019-04-15', text: 'April 15, 2019' }
+						})
+					.col-sm-6
+						+post-creative({
+							img: 'post-22-448x299',
+							title: '6 Practical Tips for Prioritizing Quality in CrossFit',
+							tag: { class: 'post-tag-primary', text: 'Tips' },
+							time: { date: '2019-03-12', text: 'March 12, 2019' }
+						})
+
+	//CTA
+	section.section.section-lg.bg-default.text-center
+		.container.wow.fadeInUp
+			h6.title-8 Join our studio
+			h2.font-weight-bold It's time to join us
+			p.big Get in touch to book yourself a place for our classes.
+			a.button.button-lg.button-primary( href='#' ) Get a free workout
+
+	//Gallery
+	section.section
+		.owl-carousel.owl-style-3( data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-mouse-drag='false', data-dots='true', data-loop='false', data-lightgallery='group' )
+			+thumbnail-modern({
+				img: 'gallery-16-480x362',
+				imgOriginal: 'gallery-16-1200x800-original'
+			}).wow.fadeIn
+			+thumbnail-modern({
+				img: 'gallery-17-480x362',
+				imgOriginal: 'gallery-17-1200x800-original'
+			}).wow.fadeIn( data-wow-delay='.05s' )
+			+thumbnail-modern({
+				img: 'gallery-18-480x362',
+				imgOriginal: 'gallery-18-1200x800-original'
+			}).wow.fadeIn( data-wow-delay='.1s' )
+			+thumbnail-modern({
+				img: 'gallery-19-480x362',
+				imgOriginal: 'gallery-19-1200x800-original'
+			}).wow.fadeIn( data-wow-delay='.15s' )
+
+	//Google Map
+	section.section
+		.section-xl.bg-gray-100.google-map-style-1
+			.container.contacts-paul-wrap: .row.justify-content-sm-end: .col-sm-6.col-md-5.wow.fadeInRight
+				ul.contacts-paul
+					li: .unit.align-items-center
+						.unit-left: span.icon.mdi.mdi-map-marker
+						.unit-body: a.big( href='#' ) 652 Main Road, Apt 12
+							br
+							| New York, USA 10033
+					li: .unit.align-items-center
+						.unit-left: span.icon.mdi.mdi-cellphone-android
+						.unit-body: a.heading-5( href='tel:#' ) +1 800 123 1234
+					li: .unit.align-items-center
+						.unit-left: span.icon.mdi.mdi-email-outline
+						.unit-body: a.big( href='mailto:#' ) info@demolink.org
+			include ../includes/_google-map
+
+	include ../sections/_footer-modern
